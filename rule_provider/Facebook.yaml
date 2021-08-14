@@ -1,0 +1,37 @@
+payload:
+  # Facebook
+  - DOMAIN-KEYWORD,messenger.com
+  - DOMAIN-KEYWORD,facebook
+  - DOMAIN-KEYWORD,fb
+  - DOMAIN-KEYWORD,fbsbx
+  - DOMAIN-KEYWORD,fbcdn
+  - DOMAIN-KEYWORD,fbaddins
+  - DOMAIN-KEYWORD,fbworkmail
+  - DOMAIN-KEYWORD,facebookmail
+  - DOMAIN-SUFFIX,messenger.com
+  - DOMAIN-SUFFIX,facebook.com
+  - DOMAIN-SUFFIX,facebook.net
+  - DOMAIN-SUFFIX,fb.com
+  - DOMAIN-SUFFIX,fb.me
+  - DOMAIN-SUFFIX,fbaddins.com
+  - DOMAIN-SUFFIX,fbcdn.net
+  - DOMAIN-SUFFIX,fbsbx.com
+  - DOMAIN-SUFFIX,fbworkmail.com
+  - DOMAIN-KEYWORD,.facebook.
+  - DOMAIN-SUFFIX,facebookmail.com
+  - IP-CIDR,103.4.96.0/22
+  - IP-CIDR,129.134.0.0/17
+  - IP-CIDR,157.240.0.0/17
+  - IP-CIDR,173.252.64.0/19
+  - IP-CIDR,173.252.96.0/19
+  - IP-CIDR,179.60.192.0/22
+  - IP-CIDR,185.60.216.0/22
+  - IP-CIDR,204.15.20.0/22
+  - IP-CIDR,31.13.24.0/21
+  - IP-CIDR,31.13.64.0/18
+  - IP-CIDR,45.64.40.0/22
+  - IP-CIDR,66.220.144.0/20
+  - IP-CIDR,69.171.224.0/19
+  - IP-CIDR,69.63.176.0/20
+  - IP-CIDR,74.119.76.0/22
+  # MATCH is not necessary here, and it will be set under rules: inside config.yml

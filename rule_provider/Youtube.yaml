@@ -1,0 +1,15 @@
+payload:
+  # Youtube
+  - DOMAIN-KEYWORD,youtube
+  - DOMAIN-KEYWORD,googlevideo
+  - DOMAIN-KEYWORD,gvt2
+  - DOMAIN-KEYWORD,youtu
+  - DOMAIN-KEYWORD,ytimg
+  - DOMAIN-SUFFIX,googlevideo.com
+  - DOMAIN-KEYWORD,youtube
+  - DOMAIN-SUFFIX,gvt2.com
+  - DOMAIN-SUFFIX,youtu.be
+  - DOMAIN-SUFFIX,ytimg.com
+  - DOMAIN,youtubei.googleapis.com
+  - DOMAIN,yt3.ggpht.com
+  # MATCH is not necessary here, because it's redirect to config.yml rules

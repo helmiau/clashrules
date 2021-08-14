@@ -1,0 +1,14 @@
+payload:
+  # Twitter
+  - DOMAIN-KEYWORD,twitter
+  - DOMAIN-KEYWORD,twimg
+  - DOMAIN-KEYWORD,twitpic
+  - DOMAIN-SUFFIX,pscp.tv
+  - DOMAIN-SUFFIX,periscope.tv
+  - DOMAIN-SUFFIX,t.co
+  - DOMAIN-SUFFIX,twimg.co
+  - DOMAIN-SUFFIX,twimg.com
+  - DOMAIN-SUFFIX,twitpic.com
+  - DOMAIN-SUFFIX,twitter.com
+  - DOMAIN-SUFFIX,vine.co
+  # MATCH is not necessary here, and it will be set under rules: inside config.yml
