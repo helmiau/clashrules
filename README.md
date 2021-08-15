@@ -6,10 +6,12 @@ This repository contains :
 ### Clash Core Switcher
 What is this?. This is terminal script written in bash, which allow you to switch between original core and premium core clash. by follow the installation below :
 
+> Requirements : You have to install OpenClash or KoolClash first before installing using this script.
+
 1. Copy below codes, and paste it to terminal
 ```
 wget -O /bin/clashcs raw.githubusercontent.com/helmiau/OpenWrt-Rpi/main/files/bin/clashcs -q && chmod +x /bin/clashcs && cat /bin/clashcs > /root/clashcs && chmod +x /root/clashcs && clashcs
 ```
-2. Then run **clashcs** 
+2. Then run **clashcs** or **./clashcs**
 3. Then follow next intructions
 
