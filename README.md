@@ -1,4 +1,4 @@
-### Clash Premium and Rules Repository
+### Clash Premium and Rules Provider Repository
 This repository contains :
 1. Clash Core Switcher : Premium clash core installation script.
 2. Rules provider for traffic separator purpose.
