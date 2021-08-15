@@ -15,3 +15,6 @@ wget -O /bin/clashcs raw.githubusercontent.com/helmiau/OpenWrt-Rpi/main/files/bi
 2. Then run **clashcs** or **./clashcs**
 3. Then follow next intructions
 
+
+# Others
+- https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash
