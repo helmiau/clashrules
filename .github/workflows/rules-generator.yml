@@ -6,6 +6,12 @@
 name: HelmiClash Rule Generator
 
 on:
+  workflow_dispatch:
+#  schedule:
+#    - cron: 0 17 * * *
+#  watch:
+#    types: started
+
   push:
     tags:
       - "*"
