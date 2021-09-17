@@ -18,3 +18,4 @@ wget -O /bin/ocsm raw.githubusercontent.com/helmiau/OpenWrt-Rpi/main/files/bin/o
 
 # Others
 - https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash
+- https://github.com/zzzt27/clashBlock
