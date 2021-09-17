@@ -63,7 +63,7 @@ jobs:
 
       - name: Release and Upload Assets
         uses: softprops/action-gh-release@v1
-        with::
+        with:
           name: ${{ env.RELEASE_NAME }}
           tag_name: ${{ env.TAG_NAME }}
           draft: false
