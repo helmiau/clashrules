@@ -43,7 +43,7 @@ jobs:
 
       - name: Generate ${{ matrix.rule_name }} rule file
         run: |
-          if [[ $RULENAME = "All-In-One" ]]; then
+          if [[ $RULENAME = "All_In_One" ]]; then
             echo -e "Waiting 20 secs before creating $RULENAME_ALL rule..."
             sleep 20
             echo -e "Downloading required rules for $RULENAME_ALL.yaml"
