@@ -12,10 +12,6 @@ on:
 #  watch:
 #    types: started
 
-  push:
-    tags:
-      - "*"
-
 jobs:
   release:
     name: Generate ${{ matrix.rule_name }}
@@ -29,31 +25,57 @@ jobs:
           - rule_name: Instagram
           - rule_name: Facebook
           - rule_name: TikTok
+          - rule_name: All-In-One
 
     env:
-      BMSRC: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/${{ matrix.rule_name }}/${{ matrix.rule_name }}.yaml
-      BMSRCRSVL: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/${{ matrix.rule_name }}/${{ matrix.rule_name }}_Resolve.yaml
+      RULENAME: ${{ matrix.rule_name }}
+      RULENAME_RESOLVE: ${{ matrix.rule_name }}_Resolve
+      BMSRC: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/$RULENAME/$RULENAME.yaml
+      BMSRC_RESOLVE: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/$RULENAME_RESOLVE/$RULENAME_RESOLVE.yaml
  
     steps:
-      - name: Set variables
-        shell: bash
-        run: |
-          echo "RELEASE_NAME=HelmiClash $(date +%Y.%m.%d)" >> $GITHUB_ENV
-          echo "TAG_NAME=clashrules-$(date +%Y.%m.%d)" >> $GITHUB_ENV
-
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
 
       - name: Generate ${{ matrix.rule_name }} rule file
         run: |
-          mkdir -p gitrelease
-          echo "Downloading ${{ matrix.rule_name }}.yaml"
-          curl -L $BMSRC > ${{ matrix.rule_name }}.yaml
-          if wget -S --spider $BMSRCRSVL 2>&1 | grep -q 'HTTP/1.1 200 OK'; then
-            echo "Downloading ${{ matrix.rule_name }}_Resolve.yaml"
-            curl -L $BMSRCRSVL > ${{ matrix.rule_name }}_Resolve.yaml
+          if [[ $RULENAME = "All-In-One" ]]; then
+            echo -e "Waiting 20 secs before creating $RULENAME rule..."
+            sleep 20
+            echo -e "Downloading required rules for $RULENAME.yaml"
+            wget --no-check-certificate $(curl -L https://github.com/helmiau/clashrules/releases/tag/clashrules-$(date +%Y.%m.%d) | grep "/helmiau/clashrules/releases/download" | grep "yaml" | sed -e 's/\"//g' -e 's/ //g' -e 's/rel=.*//g' -e 's#<ahref=#http://github.com#g')
+            find . -type f -name '*.yaml' | while read FILE ; do
+                echo -e $(readlink -f ${FILE});
+                namafile="${FILE%.*}";
+                sed -i "/payload[[:space:]]:/c\# $namafile" $FILE;
+                sed -i "s$[[:space:]]-[[:space:]]$  - $g" $FILE;
+                if ! grep -q $RULENAME $FILE; then
+                    echo -e "# $RULENAME\npayload:\n" > $RULENAME.yaml;
+                fi
+                echo -e "\n\n" > $RULENAME.yaml;
+                $FILE >>
+            done
+            echo -e "Creating $RULENAME.yaml"
+            echo -e "Listing files"
+            ls | grep "yaml"
+            rm -v !("$RULENAME.yaml")
+            echo -e "Listing files after deletion"
+            ls | grep "yaml"
+          else
+            echo -e "Downloading $RULENAME.yaml"
+            curl -L $BMSRC > $RULENAME.yaml
+            sed -i '/^#/d' $RULENAME.yaml
+            sed -i "/payload[[:space:]]:/c\payload:" $RULENAME.yaml
+            sed -i "s$[[:space:]]-[[:space:]]$  - $g" $RULENAME.yaml
+            if wget -S --spider $BMSRC_RESOLVE 2>&1 | grep -q 'HTTP/1.1 200 OK'; then
+                echo -e "Downloading $RULENAME_RESOLVE.yaml"
+                sed -i '/^#/d' $RULENAME_RESOLVE.yaml
+                sed -i "/payload[[:space:]]:/c\payload:" $RULENAME_RESOLVE.yaml
+                curl -L $BMSRC_RESOLVE > $RULENAME_RESOLVE.yaml
+            fi
           fi
-          ls -R .?*
+          echo "RELEASE_NAME=HelmiClash $(date +%Y.%m.%d)" >> $GITHUB_ENV
+          echo "TAG_NAME=clashrules-$(date +%Y.%m.%d)" >> $GITHUB_ENV
 
       - name: Release and Upload Assets
         uses: softprops/action-gh-release@v1
