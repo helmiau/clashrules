@@ -7,7 +7,7 @@
 # Run setiap 2 jam sekali
 #=================================================
 
-name: Clash Rule Generator A to G
+name: Clash Rule Generator Important
 
 on:
   workflow_dispatch:
