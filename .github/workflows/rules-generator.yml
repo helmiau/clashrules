@@ -40,7 +40,7 @@ jobs:
         shell: bash
         run: |
           echo "RELEASE_NAME=HelmiClash $(date +%Y.%m.%d)" >> $GITHUB_ENV
-          echo "TAG_NAME=helmiclash-$(date +%Y.%m.%d)" >> $GITHUB_ENV
+          echo "TAG_NAME=clashrules-$(date +%Y.%m.%d)" >> $GITHUB_ENV
 
       - name: Checkout
         uses: actions/checkout@v2
