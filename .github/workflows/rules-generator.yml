@@ -63,7 +63,6 @@ jobs:
             curl -L $BMSRC > "$RULENAME.txt"
             sed -i "/^#/d" "$RULENAME.txt"
             echo -e "# ${RULENAME}" > "$RULENAME.yaml";
-            echo -e "" >> "$RULENAME.yaml";
             cat "$RULENAME.txt" >> "$RULENAME.yaml";
             echo -e "" >> "$RULENAME.yaml";
             echo -e "" >> "$RULENAME.yaml";
@@ -72,7 +71,6 @@ jobs:
                 curl -L $BMSRC_RESOLVE > "$RULENAME_RESOLVE.txt"
                 sed -i "/^#/d" "$RULENAME_RESOLVE.yaml"
             echo -e "# ${RULENAME_RESOLVE}" > "$RULENAME_RESOLVE.yaml";
-            echo -e "" >> "$RULENAME_RESOLVE.yaml";
             cat "$RULENAME_RESOLVE.txt" >> "$RULENAME_RESOLVE.yaml";
             echo -e "" >> "$RULENAME_RESOLVE.yaml";
             echo -e "" >> "$RULENAME_RESOLVE.yaml";
