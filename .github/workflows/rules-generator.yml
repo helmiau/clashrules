@@ -11,8 +11,8 @@ name: Clash Rule Generator A to G
 
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: 0 */2 * * *
+  schedule:
+    - cron: 0 */2 * * *
 #  watch:
 #    types: started
 
