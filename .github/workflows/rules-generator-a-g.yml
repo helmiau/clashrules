@@ -214,7 +214,7 @@ jobs:
           - rule_name: GoogleVoice
           - rule_name: Gucci
           - rule_name: GuiGuDongLi
-          # - rule_name: All_In_One
+          - rule_name: All_In_One
 
     env:
       RULENAME: ${{ matrix.rule_name }}
@@ -236,6 +236,7 @@ jobs:
             wget --no-check-certificate $(curl -L https://github.com/helmiau/clashrules/releases/tag/clashrules-$(date +%Y.%m.%d) | grep "/helmiau/clashrules/releases/download" | grep "yaml" | sed -e 's/\"//g' -e 's/ //g' -e 's/rel=.*//g' -e 's#<ahref=#http://github.com#g') -P allsource
             echo "---- List source files :"
             find allsource rule_provider -type f -name '*.yaml'
+            find allsource -type f -name 'All_In_One.*' -exec rm -f "{}" \;
             echo "---- End of List source files :"
             echo -e "# ${RULENAME}\npayload:\n" > "$RULENAME.yaml";
             find allsource rule_provider -type f -name '*.yaml' | while read -r FILE ; do
