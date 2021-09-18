@@ -62,13 +62,17 @@ jobs:
             done
             echo -e "$RULENAME.yaml Created..."
           else
-            echo -e "Downloading $RULENAME.yaml"
-            curl -L $BMSRC > "$RULENAME.txt"
-            sed -i "/^#/d" "$RULENAME.txt"
-            echo -e "# ${RULENAME}" > "$RULENAME.yaml";
-            cat "$RULENAME.txt" >> "$RULENAME.yaml";
-            echo -e "" >> "$RULENAME.yaml";
-            echo -e "" >> "$RULENAME.yaml";
+            # BMSRC : blackmatrix7/ios_rule_script default yaml
+            if wget -S --spider $BMSRC 2>&1 | grep -q 'HTTP/1.1 200 OK'; then
+                echo -e "Downloading $RULENAME.yaml"
+                curl -L $BMSRC > "$RULENAME.txt"
+                sed -i "/^#/d" "$RULENAME.txt"
+                echo -e "# ${RULENAME}" > "$RULENAME.yaml";
+                cat "$RULENAME.txt" >> "$RULENAME.yaml";
+                echo -e "" >> "$RULENAME.yaml";
+                echo -e "" >> "$RULENAME.yaml";
+            fi
+            # BMSRC_RESOLVE = blackmatrix7/ios_rule_script resolve script
             if wget -S --spider $BMSRC_RESOLVE 2>&1 | grep -q 'HTTP/1.1 200 OK'; then
                 echo -e "Downloading $RULENAME_RESOLVE.yaml"
                 curl -L $BMSRC_RESOLVE > "$RULENAME_RESOLVE.txt"
