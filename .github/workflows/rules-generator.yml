@@ -59,7 +59,6 @@ jobs:
             echo -e "Downloading $RULENAME.yaml"
             curl -L $BMSRC > $RULENAME.yaml
             sed -i '/^#/d' $RULENAME.yaml
-            sed -e -i "s$\s-\s$  - $g" $RULENAME.yaml
             if wget -S --spider $BMSRC_RESOLVE 2>&1 | grep -q 'HTTP/1.1 200 OK'; then
                 echo -e "Downloading $RULENAME_RESOLVE.yaml"
                 sed -i '/^#/d' $RULENAME_RESOLVE.yaml
