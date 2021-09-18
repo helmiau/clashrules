@@ -68,8 +68,7 @@ jobs:
           tag_name: ${{ env.TAG_NAME }}
           draft: false
           prerelease: false
-          files:  |
-            ./gitrelease/*
+          files: "*.yaml"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
