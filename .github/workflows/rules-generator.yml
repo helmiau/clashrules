@@ -28,12 +28,11 @@ jobs:
           - rule_name: Instagram
           - rule_name: Facebook
           - rule_name: TikTok
-          - rule_name_all: All_In_One
+          - rule_name: All_In_One
 
     env:
       RULENAME: ${{ matrix.rule_name }}
       RULENAME_RESOLVE: ${{ matrix.rule_name }}_Resolve
-      RULENAME_ALL: ${{ matrix.rule_name_all }}
       BMSRC: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/${{ matrix.rule_name }}/${{ matrix.rule_name }}.yaml
       BMSRC_RESOLVE: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/${{ matrix.rule_name }}/${{ matrix.rule_name }}_Resolve.yaml
  
@@ -44,24 +43,24 @@ jobs:
       - name: Generate ${{ matrix.rule_name }} rule file
         run: |
           if [[ $RULENAME = "All_In_One" ]]; then
-            echo -e "Waiting 20 secs before creating $RULENAME_ALL rule..."
+            echo -e "Waiting 20 secs before creating $RULENAME rule..."
             sleep 20
-            echo -e "Downloading required rules for $RULENAME_ALL.yaml"
+            echo -e "Downloading required rules for $RULENAME.yaml"
             mkdir -p "allsource"
             wget --no-check-certificate $(curl -L https://github.com/helmiau/clashrules/releases/tag/clashrules-$(date +%Y.%m.%d) | grep "/helmiau/clashrules/releases/download" | grep "yaml" | sed -e 's/\"//g' -e 's/ //g' -e 's/rel=.*//g' -e 's#<ahref=#http://github.com#g') -P allsource
             echo "---- List source files :"
             find allsource rule_provider -type f -name '*.yaml'
             echo "---- End of List source files :"
-            echo -e "# ${RULENAME_ALL}\npayload:\n" > "$RULENAME_ALL.yaml";
+            echo -e "# ${RULENAME}\npayload:\n" > "$RULENAME.yaml";
             find allsource rule_provider -type f -name '*.yaml' | while read -r FILE ; do
                 echo -e $(readlink -f ${FILE});
                 sed -i "/^#/d" "${FILE}";
                 namafile=$(echo -e "$FILE" | sed -e 's/ /_/g' | cut -f 1 -d '.');
                 sed -i 's|payload:|# > '"$namafile"'|g' "${FILE}";
-                cat "${FILE}" >> "$RULENAME_ALL.yaml";
+                cat "${FILE}" >> "$RULENAME.yaml";
                 rm -f ${FILE};
             done
-            echo -e "$RULENAME_ALL.yaml Created..."
+            echo -e "$RULENAME.yaml Created..."
           else
             echo -e "Downloading $RULENAME.yaml"
             curl -L $BMSRC > "$RULENAME.txt"
