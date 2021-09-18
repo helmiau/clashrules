@@ -52,8 +52,8 @@ jobs:
                 if ! grep -q $RULENAME ${FILE}; then
                     echo "# $RULENAME\npayload:\n" > $RULENAME.yaml
                 fi
-                $FILE >> $RULENAME.yaml
-                rm $FILE
+                ${FILE} >> $RULENAME.yaml
+                rm -f $FILE
             done
             echo -e "Creating $RULENAME.yaml"
           else
