@@ -53,13 +53,9 @@ jobs:
                     echo -e "# $RULENAME\npayload:\n" > $RULENAME.yaml;
                 fi
                 $FILE >> $RULENAME.yaml;
+                rm $FILE;
             done
             echo -e "Creating $RULENAME.yaml"
-            echo -e "Listing files"
-            ls | grep "yaml"
-            rm -v !("$RULENAME.yaml")
-            echo -e "Listing files after deletion"
-            ls | grep "yaml"
           else
             echo -e "Downloading $RULENAME.yaml"
             curl -L $BMSRC > $RULENAME.yaml
@@ -73,6 +69,8 @@ jobs:
                 curl -L $BMSRC_RESOLVE > $RULENAME_RESOLVE.yaml
             fi
           fi
+          echo -e "Listing YAML files"
+          ls | grep "yaml"
           echo "RELEASE_NAME=HelmiClash $(date +%Y.%m.%d)" >> $GITHUB_ENV
           echo "TAG_NAME=clashrules-$(date +%Y.%m.%d)" >> $GITHUB_ENV
 
