@@ -48,9 +48,10 @@ jobs:
             echo "---- List source files :"
             find allsource rule_provider -type f -name '*.yaml'
             echo "---- End of List source files :"
-            echo $"# $RULENAME\npayload:\n" > "$RULENAME.yaml";
+            echo -e "# ${RULENAME}\npayload:\n" > "$RULENAME.yaml";
             find allsource rule_provider -type f -name '*.yaml' | while read -r FILE ; do
                 echo -e $(readlink -f ${FILE});
+                sed -i "/^#/d" "${FILE}";
                 namafile=$(echo -e "$FILE" | sed -e 's/ /_/g' | cut -f 1 -d '.');
                 sed -i 's|payload:|# > '"$namafile"'|g' "${FILE}";
                 cat "${FILE}" >> "$RULENAME.yaml";
@@ -59,12 +60,22 @@ jobs:
             echo -e "Creating $RULENAME.yaml"
           else
             echo -e "Downloading $RULENAME.yaml"
-            curl -L $BMSRC > "$RULENAME.yaml"
-            sed -i "/^#/d" "$RULENAME.yaml"
+            curl -L $BMSRC > "$RULENAME.txt"
+            sed -i "/^#/d" "$RULENAME.txt"
+            echo -e "# ${RULENAME}" > "$RULENAME.yaml";
+            echo -e "" >> "$RULENAME.yaml";
+            cat "$RULENAME.txt" >> "$RULENAME.yaml";
+            echo -e "" >> "$RULENAME.yaml";
+            echo -e "" >> "$RULENAME.yaml";
             if wget -S --spider $BMSRC_RESOLVE 2>&1 | grep -q 'HTTP/1.1 200 OK'; then
-                echo -e "Downloading $RULENAME_RESOLVE.yaml"
-                curl -L $BMSRC_RESOLVE > "$RULENAME_RESOLVE.yaml"
+                echo -e "Downloading $RULENAME_RESOLVE.txt"
+                curl -L $BMSRC_RESOLVE > "$RULENAME_RESOLVE.txt"
                 sed -i "/^#/d" "$RULENAME_RESOLVE.yaml"
+            echo -e "# ${RULENAME_RESOLVE}" > "$RULENAME_RESOLVE.yaml";
+            echo -e "" >> "$RULENAME_RESOLVE.yaml";
+            cat "$RULENAME_RESOLVE.txt" >> "$RULENAME_RESOLVE.yaml";
+            echo -e "" >> "$RULENAME_RESOLVE.yaml";
+            echo -e "" >> "$RULENAME_RESOLVE.yaml";
             fi
           fi
           echo -e "------- Listing YAML files"
