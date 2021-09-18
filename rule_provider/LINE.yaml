@@ -1,5 +1,5 @@
+# LINE
 payload:
-  # Line
   - DOMAIN-KEYWORD,line.me
   - DOMAIN-KEYWORD,naver
   - DOMAIN-SUFFIX,lin.ee

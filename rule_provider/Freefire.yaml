@@ -1,5 +1,5 @@
+# FreeFire
 payload:
-  # FreeFire
   - DOMAIN-SUFFIX,garena.com
   - DOMAIN-SUFFIX,pubgmobile.com  
-  # MATCH is not necessary here  
+  # MATCH is not necessary here

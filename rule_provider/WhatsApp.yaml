@@ -1,4 +1,4 @@
+# Whatsapp
 payload:
-  # Whatsapp
   - DOMAIN-KEYWORD,whatsapp
   # MATCH is not necessary here, and it will be set under rules: inside settings
