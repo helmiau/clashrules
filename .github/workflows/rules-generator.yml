@@ -12,10 +12,6 @@ on:
 #  watch:
 #    types: started
 
-  push:
-    tags:
-      - "*"
-
 jobs:
   release:
     name: Generate ${{ matrix.rule_name }}
@@ -51,13 +47,12 @@ jobs:
             find . -type f -name '*.yaml' | while read FILE ; do
                 echo -e $(readlink -f ${FILE});
                 namafile="${FILE%.*}";
-                sed -i "/payload[[:space:]]:/c\# $namafile" $FILE;
+                sed -i "/payload[[:space:]]:/c\\n\n# $namafile" $FILE;
                 sed -i "s$[[:space:]]-[[:space:]]$  - $g" $FILE;
                 if ! grep -q $RULENAME $FILE; then
                     echo -e "# $RULENAME\npayload:\n" > $RULENAME.yaml;
                 fi
-                echo -e "\n\n" > $RULENAME.yaml;
-                $FILE >>
+                $FILE >> $RULENAME.yaml;
             done
             echo -e "Creating $RULENAME.yaml"
             echo -e "Listing files"
