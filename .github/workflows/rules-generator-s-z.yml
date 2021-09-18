@@ -1,0 +1,240 @@
+#=================================================
+# Description: Generate Rule Provider for Clash
+# Script by helmiau.com
+# https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/'
+# Run setiap 2 jam sekali
+# curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/README.md | grep "blackmatrix7/ios_rule_script/tree/master/rule/Clash" | sed -e 's/ //g' -e 's/|/\n/g' -e 's#https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/#rule_name: #iIg' -e 's#(#bukaan#g' -e 's#)##g' | sed '/^[[:space:]]*$/d' | sed 's/^.*\(rule_name.*\).*$/\1/' | sed 's#rule_name#          - rule_name#g' > include-rule.yaml
+# Run setiap 2 jam sekali
+#=================================================
+
+name: Clash Rule Generator S to Z
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 */2 * * *
+#  watch:
+#    types: started
+
+jobs:
+  release:
+    name: Generate ${{ matrix.rule_name }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - rule_name: Samsung
+          - rule_name: Scaleflex
+          - rule_name: Scholar
+          - rule_name: Sectigo
+          - rule_name: SFExpress
+          - rule_name: ShangHaiJuXiao
+          - rule_name: Shanling
+          - rule_name: ShenMa
+          - rule_name: ShiNongZhiKe
+          - rule_name: Shopee
+          - rule_name: Shopify
+          - rule_name: Sina
+          - rule_name: Siri
+          - rule_name: SkyGO
+          - rule_name: Slack
+          - rule_name: Sling
+          - rule_name: SmarTone
+          - rule_name: SMZDM
+          - rule_name: Snap
+          - rule_name: Sohu
+          - rule_name: Sony
+          - rule_name: SouFang
+          - rule_name: SoundCloud
+          - rule_name: SourceForge
+          - rule_name: Spark
+          - rule_name: Speedtest
+          - rule_name: Spotify
+          - rule_name: Stackexchange
+          - rule_name: Starbucks
+          - rule_name: StarCraftII
+          - rule_name: Steam
+          - rule_name: SteamCN
+          - rule_name: SublimeText
+          - rule_name: SuiShiChuanMei
+          - rule_name: SuNing
+          - rule_name: Supercell
+          - rule_name: Synology
+          - rule_name: SystemOTA
+          - rule_name: TaiheMusic
+          - rule_name: TaiKang
+          - rule_name: TaiWanGood
+          - rule_name: TCL
+          - rule_name: Teambition
+          - rule_name: TeamViewer
+          - rule_name: Telegram
+          - rule_name: TelegramNL
+          - rule_name: TelegramSG
+          - rule_name: TelegramUS
+          - rule_name: Tencent
+          - rule_name: TencentVideo
+          - rule_name: Tesla
+          - rule_name: TestFlight
+          - rule_name: ThomsonReuters
+          - rule_name: TianTianKanKan
+          - rule_name: TianWeiChengXin
+          - rule_name: TianYaForum
+          - rule_name: TIDAL
+          - rule_name: TigerFintech
+          - rule_name: TikTok
+          - rule_name: TongCheng
+          - rule_name: Tumblr
+          - rule_name: TVB
+          - rule_name: TVer
+          - rule_name: Twitch
+          - rule_name: Twitter
+          - rule_name: U17
+          - rule_name: UBI
+          - rule_name: UC
+          - rule_name: UCloud
+          - rule_name: UnionPay
+          - rule_name: Unity
+          - rule_name: UPYun
+          - rule_name: Vancl
+          - rule_name: Vercel
+          - rule_name: Verisign
+          - rule_name: Verizon
+          - rule_name: VidolTV
+          - rule_name: Viki
+          - rule_name: Vimeo
+          - rule_name: VipShop
+          - rule_name: VISA
+          - rule_name: ViuTV
+          - rule_name: Vivo
+          - rule_name: VK
+          - rule_name: VOA
+          - rule_name: Voxmedia
+          - rule_name: WangSuKeJi
+          - rule_name: WangXinKeJi
+          - rule_name: WanMeiShiJie
+          - rule_name: Weibo
+          - rule_name: WeiZhiYunDong
+          - rule_name: WenJuanXing
+          - rule_name: Westerndigital
+          - rule_name: WeTV
+          - rule_name: Whatsapp
+          - rule_name: WhiteList
+          - rule_name: WiFiMaster
+          - rule_name: Wikimedia
+          - rule_name: Wikipedia
+          - rule_name: WildRift
+          - rule_name: WIX
+          - rule_name: Wordpress
+          - rule_name: WorldofWarcraft
+          - rule_name: Xbox
+          - rule_name: XiamiMusic
+          - rule_name: XianYu
+          - rule_name: XiaoGouKeJi
+          - rule_name: XiaoMi
+          - rule_name: XiaoYuanKeJi
+          - rule_name: XieCheng
+          - rule_name: XueErSi
+          - rule_name: XueQiu
+          - rule_name: Xunlei
+          - rule_name: Yandex
+          - rule_name: YiChe
+          - rule_name: YiXiaKeJi
+          - rule_name: YiZhiBo
+          - rule_name: Youku
+          - rule_name: YouMengChuangXiang
+          - rule_name: YouTube
+          - rule_name: YouTubeMusic
+          - rule_name: YouZan
+          - rule_name: YuanFuDao
+          - rule_name: YunFanJiaSu
+          - rule_name: YYeTs
+          - rule_name: ZDNS
+          - rule_name: Zee
+          - rule_name: ZeeTV
+          - rule_name: Zendesk
+          - rule_name: ZhangYue
+          - rule_name: ZhihuAds
+          - rule_name: ZhiYunZhong
+          - rule_name: ZhongGuoShiHua
+          - rule_name: ZhongWeiShiJi
+          - rule_name: ZhongYuanYiShang
+          - rule_name: ZhuanZhuan
+          - rule_name: Zoho
+          - rule_name: All_In_One
+
+    env:
+      RULENAME: ${{ matrix.rule_name }}
+      RULENAME_RESOLVE: ${{ matrix.rule_name }}_Resolve
+      BMSRC: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/${{ matrix.rule_name }}/${{ matrix.rule_name }}.yaml
+      BMSRC_RESOLVE: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/${{ matrix.rule_name }}/${{ matrix.rule_name }}_Resolve.yaml
+ 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Generate ${{ matrix.rule_name }} rule file
+        run: |
+          if [[ $RULENAME = "All_In_One" ]]; then
+            echo -e "Waiting 20 secs before creating $RULENAME rule..."
+            sleep 20
+            echo -e "Downloading required rules for $RULENAME.yaml"
+            mkdir -p "allsource"
+            wget --no-check-certificate $(curl -L https://github.com/helmiau/clashrules/releases/tag/clashrules-$(date +%Y.%m.%d) | grep "/helmiau/clashrules/releases/download" | grep "yaml" | sed -e 's/\"//g' -e 's/ //g' -e 's/rel=.*//g' -e 's#<ahref=#http://github.com#g') -P allsource
+            echo "---- List source files :"
+            find allsource rule_provider -type f -name '*.yaml'
+            echo "---- End of List source files :"
+            echo -e "# ${RULENAME}\npayload:\n" > "$RULENAME.yaml";
+            find allsource rule_provider -type f -name '*.yaml' | while read -r FILE ; do
+                echo -e $(readlink -f ${FILE});
+                sed -i "/^#/d" "${FILE}";
+                namafile=$(echo -e "$FILE" | sed -e 's/ /_/g' | cut -f 1 -d '.');
+                sed -i 's|payload:|# > '"$namafile"'|g' "${FILE}";
+                cat "${FILE}" >> "$RULENAME.yaml";
+                rm -f ${FILE};
+            done
+            echo -e "$RULENAME.yaml Created..."
+          else
+            # BMSRC : blackmatrix7/ios_rule_script default yaml
+            if wget -S --spider $BMSRC 2>&1 | grep -q 'HTTP/1.1 200 OK'; then
+                echo -e "Downloading $RULENAME.yaml"
+                curl -L $BMSRC > "$RULENAME.txt"
+                sed -i "/^#/d" "$RULENAME.txt"
+                echo -e "# ${RULENAME}" > "$RULENAME.yaml";
+                cat "$RULENAME.txt" >> "$RULENAME.yaml";
+                echo -e "" >> "$RULENAME.yaml";
+                echo -e "" >> "$RULENAME.yaml";
+            fi
+            # BMSRC_RESOLVE = blackmatrix7/ios_rule_script resolve script
+            if wget -S --spider $BMSRC_RESOLVE 2>&1 | grep -q 'HTTP/1.1 200 OK'; then
+                echo -e "Downloading $RULENAME_RESOLVE.yaml"
+                curl -L $BMSRC_RESOLVE > "$RULENAME_RESOLVE.txt"
+                sed -i "/^#/d" "$RULENAME_RESOLVE.txt"
+                echo -e "# ${RULENAME_RESOLVE}" > "$RULENAME_RESOLVE.yaml";
+                cat "$RULENAME_RESOLVE.txt" >> "$RULENAME_RESOLVE.yaml";
+                echo -e "" >> "$RULENAME_RESOLVE.yaml";
+                echo -e "" >> "$RULENAME_RESOLVE.yaml";
+            fi
+          fi
+          echo -e "------- Listing YAML files"
+          ls | grep "yaml"
+          echo -e "------- End of Listing YAML files"
+          echo "RELEASE_NAME=HelmiClash $(date +%Y.%m.%d)" >> $GITHUB_ENV
+          echo "TAG_NAME=clashrules-$(date +%Y.%m.%d)" >> $GITHUB_ENV
+
+      - name: Release and Upload Assets
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ env.RELEASE_NAME }}
+          tag_name: ${{ env.TAG_NAME }}
+          draft: false
+          prerelease: false
+          files: "*.yaml"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Delete Workflow Runs
+        uses: GitRML/delete-workflow-runs@main
+        with:
+          retain_days: 1
+          keep_minimum_runs: 3
