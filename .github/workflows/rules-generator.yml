@@ -47,7 +47,7 @@ jobs:
             ls | grep "yaml"
             find . -type f -name '*.yaml' | while read FILE ; do
                 echo -e $(readlink -f ${FILE})
-                namafile="${FILE%.*}"
+                namafile=$(echo -e "$FILE" | cut -f 1 -d '.')
                 sed -i "s/payload:/\n\n# $namafile/g" ${FILE}
                 if ! grep -q $RULENAME ${FILE}; then
                     echo "# $RULENAME\npayload:\n" > $RULENAME.yaml
