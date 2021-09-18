@@ -51,7 +51,7 @@ jobs:
             find allsource rule_provider -type f -name '*.yaml' | while read -r FILE ; do
                 echo -e $(readlink -f ${FILE});
                 namafile=$(echo "$FILE" | cut -f 1 -d '.');
-                sed -i "s/payload:/\n\n# $namafile/g" ${FILE};
+                sed -i "s/payload:/\# $namafile/g" ${FILE};
                 if ! grep -q $RULENAME ${FILE}; then
                     echo $'# $RULENAME\npayload:\n' > $RULENAME.yaml;
                 fi
