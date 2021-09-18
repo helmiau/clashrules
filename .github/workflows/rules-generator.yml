@@ -46,7 +46,7 @@ jobs:
             mkdir -p "allsource"
             wget --no-check-certificate $(curl -L https://github.com/helmiau/clashrules/releases/tag/clashrules-$(date +%Y.%m.%d) | grep "/helmiau/clashrules/releases/download" | grep "yaml" | sed -e 's/\"//g' -e 's/ //g' -e 's/rel=.*//g' -e 's#<ahref=#http://github.com#g') -P allsource
             echo "---- List source files :"
-            ls allsource | grep "yaml"
+            find allsource rule_provider -type f -name '*.yaml'
             echo "---- End of List source files :"
             find allsource rule_provider -type f -name '*.yaml' | while read -r FILE ; do
                 echo -e $(readlink -f ${FILE});
@@ -56,7 +56,7 @@ jobs:
                     echo $'# $RULENAME\npayload:\n' > $RULENAME.yaml;
                 fi
                 cat ${FILE} >> $RULENAME.yaml;
-                rm -f ${FILE};
+                # rm -f ${FILE};
             done
             echo -e "Creating $RULENAME.yaml"
           else
