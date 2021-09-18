@@ -48,12 +48,12 @@ jobs:
             echo "---- List source files :"
             find allsource rule_provider -type f -name '*.yaml'
             echo "---- End of List source files :"
-            echo $'# $RULENAME\npayload:\n' > $RULENAME.yaml;
+            echo $"# $RULENAME\npayload:\n" > $RULENAME.yaml;
             find allsource rule_provider -type f -name '*.yaml' | while read -r FILE ; do
                 echo -e $(readlink -f ${FILE});
                 namafile=$(echo -e "$FILE" | cut -f 1 -d '.');
-                sed -i 's/payload:/\# > $namafile/g' ${FILE};
-                cat ${FILE} >> $RULENAME.yaml;
+                sed -i "s/payload:/\# > $namafile/g" "${FILE}";
+                cat "${FILE}" >> $RULENAME.yaml;
                 rm -f ${FILE};
             done
             echo -e "Creating $RULENAME.yaml"
