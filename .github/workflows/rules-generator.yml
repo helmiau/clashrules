@@ -50,7 +50,7 @@ jobs:
                 namafile=$(echo "$FILE" | cut -f 1 -d '.');
                 sed -i "s/payload:/\n\n# $namafile/g" ${FILE};
                 if ! grep -q $RULENAME ${FILE}; then
-                    cat "# $RULENAME\npayload:\n" > $RULENAME.yaml;
+                    cat $'# $RULENAME\npayload:\n' > $RULENAME.yaml;
                 fi
                 cat ${FILE} >> $RULENAME.yaml;
                 rm -f ${FILE};
