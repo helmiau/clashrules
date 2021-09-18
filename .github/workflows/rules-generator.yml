@@ -1,14 +1,17 @@
 #=================================================
 # Description: Generate Rule Provider for Clash
-# HelmiWrt by helmiau.com
+# Script by helmiau.com
+# https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/
+# curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/README.md | grep "blackmatrix7/ios_rule_script/tree/master/rule/Clash" | sed -e 's/ //g' -e 's/|/\n/g' -e 's#https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/#rule_name: #iIg' -e 's#(#bukaan#g' -e 's#)#penutup#g' | echo ${#*bukaan} | awk '/bukaan/{s=x}{s=s$0"\n"}/penutup/{print s}'
+# Run setiap 2 jam sekali
 #=================================================
 
-name: HelmiClash Rule Generator
+name: Clash Rule Generator
 
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: 0 17 * * *
+  schedule:
+    - cron: 0 */2 * * *
 #  watch:
 #    types: started
 
@@ -25,11 +28,12 @@ jobs:
           - rule_name: Instagram
           - rule_name: Facebook
           - rule_name: TikTok
-          - rule_name: All-In-One
+          - rule_name_all: All_In_One
 
     env:
       RULENAME: ${{ matrix.rule_name }}
       RULENAME_RESOLVE: ${{ matrix.rule_name }}_Resolve
+      RULENAME_ALL: ${{ matrix.rule_name_all }}
       BMSRC: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/${{ matrix.rule_name }}/${{ matrix.rule_name }}.yaml
       BMSRC_RESOLVE: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/${{ matrix.rule_name }}/${{ matrix.rule_name }}_Resolve.yaml
  
@@ -40,24 +44,24 @@ jobs:
       - name: Generate ${{ matrix.rule_name }} rule file
         run: |
           if [[ $RULENAME = "All-In-One" ]]; then
-            echo -e "Waiting 20 secs before creating $RULENAME rule..."
+            echo -e "Waiting 20 secs before creating $RULENAME_ALL rule..."
             sleep 20
-            echo -e "Downloading required rules for $RULENAME.yaml"
+            echo -e "Downloading required rules for $RULENAME_ALL.yaml"
             mkdir -p "allsource"
             wget --no-check-certificate $(curl -L https://github.com/helmiau/clashrules/releases/tag/clashrules-$(date +%Y.%m.%d) | grep "/helmiau/clashrules/releases/download" | grep "yaml" | sed -e 's/\"//g' -e 's/ //g' -e 's/rel=.*//g' -e 's#<ahref=#http://github.com#g') -P allsource
             echo "---- List source files :"
             find allsource rule_provider -type f -name '*.yaml'
             echo "---- End of List source files :"
-            echo -e "# ${RULENAME}\npayload:\n" > "$RULENAME.yaml";
+            echo -e "# ${RULENAME_ALL}\npayload:\n" > "$RULENAME_ALL.yaml";
             find allsource rule_provider -type f -name '*.yaml' | while read -r FILE ; do
                 echo -e $(readlink -f ${FILE});
                 sed -i "/^#/d" "${FILE}";
                 namafile=$(echo -e "$FILE" | sed -e 's/ /_/g' | cut -f 1 -d '.');
                 sed -i 's|payload:|# > '"$namafile"'|g' "${FILE}";
-                cat "${FILE}" >> "$RULENAME.yaml";
+                cat "${FILE}" >> "$RULENAME_ALL.yaml";
                 rm -f ${FILE};
             done
-            echo -e "Creating $RULENAME.yaml"
+            echo -e "$RULENAME_ALL.yaml Created..."
           else
             echo -e "Downloading $RULENAME.yaml"
             curl -L $BMSRC > "$RULENAME.txt"
@@ -93,3 +97,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
+      - name: Delete Workflow Runs
+        uses: GitRML/delete-workflow-runs@main
+        with:
+          retain_days: 1
+          keep_minimum_runs: 3
