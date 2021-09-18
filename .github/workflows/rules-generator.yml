@@ -48,7 +48,7 @@ jobs:
             find . -type f -name '*.yaml' | while read FILE ; do
                 echo -e $(readlink -f ${FILE})
                 namafile="${FILE%.*}"
-                sed -i "s$payload:$\n\n# $namafile$g" $FILE
+                sed -i "s/payload:/\n\n# $namafile/g" ${FILE}
                 if ! grep -q $RULENAME ${FILE}; then
                     echo "# $RULENAME\npayload:\n" > $RULENAME.yaml
                 fi
@@ -62,8 +62,8 @@ jobs:
             sed -i '/^#/d' $RULENAME.yaml
             if wget -S --spider $BMSRC_RESOLVE 2>&1 | grep -q 'HTTP/1.1 200 OK'; then
                 echo -e "Downloading $RULENAME_RESOLVE.yaml"
-                sed -i '/^#/d' $RULENAME_RESOLVE.yaml
                 curl -L $BMSRC_RESOLVE > $RULENAME_RESOLVE.yaml
+                sed -i '/^#/d' $RULENAME_RESOLVE.yaml
             fi
           fi
           echo -e "Listing YAML files"
