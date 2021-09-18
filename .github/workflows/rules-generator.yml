@@ -12,6 +12,10 @@ on:
 #  watch:
 #    types: started
 
+  push:
+    tags:
+      - "*"
+
 jobs:
   release:
     name: Generate ${{ matrix.rule_name }}
