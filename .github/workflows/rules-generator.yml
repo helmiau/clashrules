@@ -43,31 +43,31 @@ jobs:
             echo -e "Waiting 20 secs before creating $RULENAME rule..."
             sleep 20
             echo -e "Downloading required rules for $RULENAME.yaml"
-            wget --no-check-certificate $(curl -L https://github.com/helmiau/clashrules/releases/tag/clashrules-$(date +%Y.%m.%d) | grep "/helmiau/clashrules/releases/download" | grep "yaml" | sed -e 's/\"//g' -e 's/ //g' -e 's/rel=.*//g' -e 's#<ahref=#http://github.com#g')
-            ls | grep "yaml"
-            find . -type f -name '*.yaml' | while read FILE ; do
-                echo -e $(readlink -f ${FILE})
+            wget --no-check-certificate $(curl -L https://github.com/helmiau/clashrules/releases/tag/clashrules-"$(date +%Y.%m.%d)"" | grep "/helmiau/clashrules/releases/download" | grep "yaml" | sed -e 's/\"//g' -e 's/ //g' -e 's/rel=.*//g' -e 's#<ahref=#http://github.com#g')
+            ls | grep yaml
+            find . -type f -name '*.yaml' | while read -r FILE ; do
+                echo -e '$(readlink -f ${FILE})'
                 namafile=$(echo -e "$FILE" | cut -f 1 -d '.')
-                sed -i "s/payload:/\n\n# $namafile/g" ${FILE}
+                sed -i 's/payload:/\n\n# $namafile/g' ${FILE}
                 if ! grep -q $RULENAME ${FILE}; then
-                    echo "# $RULENAME\npayload:\n" > $RULENAME.yaml
+                    echo '# $RULENAME\npayload:\n' > $RULENAME.yaml
                 fi
                 $FILE >> $RULENAME.yaml
                 rm $FILE
             done
-            echo -e "Creating $RULENAME.yaml"
+            echo -e 'Creating $RULENAME.yaml'
           else
-            echo -e "Downloading $RULENAME.yaml"
+            echo -e 'Downloading $RULENAME.yaml'
             curl -L $BMSRC > $RULENAME.yaml
             sed -i '/^#/d' $RULENAME.yaml
             if wget -S --spider $BMSRC_RESOLVE 2>&1 | grep -q 'HTTP/1.1 200 OK'; then
-                echo -e "Downloading $RULENAME_RESOLVE.yaml"
+                echo -e 'Downloading $RULENAME_RESOLVE.yaml'
                 curl -L $BMSRC_RESOLVE > $RULENAME_RESOLVE.yaml
                 sed -i '/^#/d' $RULENAME_RESOLVE.yaml
             fi
           fi
-          echo -e "Listing YAML files"
-          ls | grep "yaml"
+          echo -e 'Listing YAML files'
+          ls | grep yaml
           echo "RELEASE_NAME=HelmiClash $(date +%Y.%m.%d)" >> $GITHUB_ENV
           echo "TAG_NAME=clashrules-$(date +%Y.%m.%d)" >> $GITHUB_ENV
 
