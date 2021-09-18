@@ -43,12 +43,11 @@ jobs:
             echo -e "Waiting 20 secs before creating $RULENAME rule..."
             sleep 20
             echo -e "Downloading required rules for $RULENAME.yaml"
-            wget -q --no-check-certificate $(curl -L https://github.com/helmiau/clashrules/releases/tag/clashrules-$(date +%Y.%m.%d) | grep "/helmiau/clashrules/releases/download" | grep "yaml" | sed -e 's/\"//g' -e 's/ //g' -e 's/rel=.*//g' -e 's#<ahref=#http://github.com#g')
+            wget --no-check-certificate $(curl -L https://github.com/helmiau/clashrules/releases/tag/clashrules-$(date +%Y.%m.%d) | grep "/helmiau/clashrules/releases/download" | grep "yaml" | sed -e 's/\"//g' -e 's/ //g' -e 's/rel=.*//g' -e 's#<ahref=#http://github.com#g')
             find . -type f -name '*.yaml' | while read FILE ; do
                 echo -e $(readlink -f ${FILE});
                 namafile="${FILE%.*}";
                 sed -i "/payload:/c\\n\n# $namafile" $FILE;
-                sed -i "s$[[:space:]]-[[:space:]]$  - $g" $FILE;
                 if ! grep -q $RULENAME $FILE; then
                     echo -e "# $RULENAME\npayload:\n" > $RULENAME.yaml;
                 fi
@@ -60,12 +59,10 @@ jobs:
             echo -e "Downloading $RULENAME.yaml"
             curl -L $BMSRC > $RULENAME.yaml
             sed -i '/^#/d' $RULENAME.yaml
-            sed -i "/payload/c\payload:" $RULENAME.yaml
-            sed -i "s$[[:space:]]-[[:space:]]$  - $g" $RULENAME.yaml
+            sed -e -i "s$\s-\s$  - $g" $RULENAME.yaml
             if wget -S --spider $BMSRC_RESOLVE 2>&1 | grep -q 'HTTP/1.1 200 OK'; then
                 echo -e "Downloading $RULENAME_RESOLVE.yaml"
                 sed -i '/^#/d' $RULENAME_RESOLVE.yaml
-                sed -i "/payload[[:space:]]:/c\payload:" $RULENAME_RESOLVE.yaml
                 curl -L $BMSRC_RESOLVE > $RULENAME_RESOLVE.yaml
             fi
           fi
