@@ -7,7 +7,7 @@
 # Run setiap 2 jam sekali
 #=================================================
 
-name: Clash Rule Generator Important
+name: Clash Rule Generator
 
 on:
   workflow_dispatch:
@@ -44,17 +44,6 @@ jobs:
           - rule_name: Baidu
           - rule_name: BlackList
           - rule_name: Blizzard
-          - rule_name: Camera360
-          - rule_name: China
-          - rule_name: ChinaIPs
-          - rule_name: ChinaIPsBGP
-          - rule_name: ChinaMedia
-          - rule_name: ChinaMobile
-          - rule_name: ChinaNews
-          - rule_name: ChinaTelecom
-          - rule_name: ChinaTest
-          - rule_name: ChinaUnicom
-          - rule_name: Chromecast
           - rule_name: Classic
           - rule_name: Cloudflare
           - rule_name: Clubhouse
@@ -68,21 +57,12 @@ jobs:
           - rule_name: Docker
           - rule_name: Download
           - rule_name: Dropbox
-          - rule_name: EA
-          - rule_name: Epic
           - rule_name: Facebook
-          - rule_name: FlipBoard
-          - rule_name: Fox
           - rule_name: Game
           - rule_name: Garena
-          - rule_name: Gettyimages
-          - rule_name: Gigabyte
-          - rule_name: GitBook
           - rule_name: GitHub
           - rule_name: GitLab
           - rule_name: Global
-          - rule_name: GlobalMedia
-          - rule_name: Globalsign
           - rule_name: Google
           - rule_name: GoogleDrive
           - rule_name: GoogleSearch
@@ -93,20 +73,18 @@ jobs:
           - rule_name: Instagram
           - rule_name: JOOX
           - rule_name: Jquery
-          - rule_name: Jsdelivr
           - rule_name: Keep
           - rule_name: Lan
           - rule_name: Line
           - rule_name: LineTV
           - rule_name: MEGA
           - rule_name: Mail
-          - rule_name: Mailru
           - rule_name: Microsoft
           - rule_name: Naver
           - rule_name: NaverTV
           - rule_name: Netflix
           - rule_name: OneDrive
-          - rule_name: Pixiv=
+          - rule_name: Pixiv
           - rule_name: PrimeVideo
           - rule_name: Privacy
           - rule_name: PrivateTracker
