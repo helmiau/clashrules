@@ -147,7 +147,9 @@ jobs:
             find allsource rule_provider -type f -name '*.yaml'
             find allsource -type f -name 'All_In_One.*' -exec rm -f "{}" \;
             echo "---- End of List source files :"
-            echo -e "# ${RULENAME}\npayload:\n" > "$RULENAME.yaml";
+            if ! grep -q '$RULENAME'; then
+                echo -e "# ${RULENAME}\npayload:\n" > "$RULENAME.yaml";
+            fi
             find allsource rule_provider -type f -name '*.yaml' | while read -r FILE ; do
                 echo -e $(readlink -f ${FILE});
                 sed -i "/^#/d" "${FILE}";
@@ -182,20 +184,37 @@ jobs:
           echo -e "------- Listing YAML files"
           ls | grep "yaml"
           echo -e "------- End of Listing YAML files"
-          echo "RELEASE_NAME=HelmiClash $(date +%Y.%m.%d)" >> $GITHUB_ENV
-          echo "TAG_NAME=clashrules-$(date +%Y.%m.%d)" >> $GITHUB_ENV
+          echo "RELEASE_NAME=ClashRules" >> $GITHUB_ENV
+          echo "TAG_NAME=clashrules" >> $GITHUB_ENV
+
+      - name: Delete Older Releases and Tags
+        uses: dev-drprasad/delete-older-releases@v0.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          keep_latest: 0
+          delete_tags: true
+          delete_tag_pattern: clashrules
+
+      - name: Waiting 20 secs for deleting releases
+        id: tunggu
+        run: |
+          sleep 20
+          echo "::set-output name=status::success"
 
       - name: Release and Upload Assets
+        if: steps.tunggu.outputs.status == 'success' && !cancelled()
         uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ env.RELEASE_NAME }}
-          tag_name: ${{ env.TAG_NAME }}
+          name: README-STDIIS
+          tag_name: clashrules
           draft: false
           prerelease: false
           files: "*.yaml"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+          body: "Updated : ${{ steps.waktu.outputs.waktu }}"
+
       - name: Delete Workflow Runs
         uses: GitRML/delete-workflow-runs@main
         with:
