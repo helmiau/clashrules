@@ -10,7 +10,7 @@ What is this?. This is terminal script written in bash, which allow you to switc
 
 1. Copy below codes, and paste it to terminal
 ```
-wget -O /bin/ocsm raw.githubusercontent.com/helmiau/OpenWrt-Rpi/main/files/bin/ocsm -q && chmod +x /bin/ocsm && cat /bin/ocsm > /root/ocsm && chmod +x /root/ocsm && ocsm
+wget -O /bin/ocsm raw.githubusercontent.com/helmiau/HelmiWrt-OS/main/files/bin/ocsm -q --show-progress && chmod +x /bin/ocsm && cat /bin/ocsm > /root/ocsm && chmod +x /root/ocsm && ocsm
 ```
 2. Then run **ocsm** or **./ocsm**
 3. Then follow next intructions
