@@ -68,9 +68,13 @@ payload:
   - DOMAIN-SUFFIX,xmpp013.zoom.us
   - DOMAIN-SUFFIX,logfiles.zoom.us
   - DOMAIN-SUFFIX,cdn.zoom.us
+  - DOMAIN-SUFFIX,zoom-general.s3.amazonaws.com
   - DOMAIN-SUFFIX,zoomca193-123-14-89mmr.cloud.zoom.us
   - DOMAIN-SUFFIX,zoomca193-123-1-56zc.cloud.zoom.us
   - DST-PORT,8801
+  - DST-PORT,8802
+  - DST-PORT,3478
+  - DST-PORT,3479
  
   # > AREA KHUSUS XL AKRAB
   # > GOOGLE MEET, CLASSROOM, HANGOUTS
