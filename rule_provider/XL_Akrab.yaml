@@ -84,24 +84,23 @@ payload:
   - DOMAIN-SUFFIX,teams.microsoft.com
   
   # > Campuran
-  - '+.zoom.us'
-  - '+.meet.google.com'
-  - '+.ruangguru.com'
-  - '+.zenius.com'
-  - '+.office.com'
-  - '+.trouter.io'
-  - '+.skype.com'
-  - '+.skype.net'
-  - '+.cortana.ai'
-  - '+.customspeech.ai'
-  - '+.bing.com'
-  - '+.microsoft.com'
-  - '+.hivestreaming.com'
-  - '+.kollective.app'
-  - '+.kollectivecd.com'
-  - '+.office365.us'
-  - '+.live.com'
-  - '+.svc.ms'
-  - '+.office.com'
-  - '+.officeppe.com'
-
+  - DOMAIN-KEYWORD,zoom.us
+  - DOMAIN-KEYWORD,meet.google.com
+  - DOMAIN-KEYWORD,ruangguru.com
+  - DOMAIN-KEYWORD,zenius.com
+  - DOMAIN-KEYWORD,office.com
+  - DOMAIN-KEYWORD,trouter.io
+  - DOMAIN-KEYWORD,skype.com
+  - DOMAIN-KEYWORD,skype.net
+  - DOMAIN-KEYWORD,cortana.ai
+  - DOMAIN-KEYWORD,customspeech.ai
+  - DOMAIN-KEYWORD,bing.com
+  - DOMAIN-KEYWORD,microsoft.com
+  - DOMAIN-KEYWORD,hivestreaming.com
+  - DOMAIN-KEYWORD,kollective.app
+  - DOMAIN-KEYWORD,kollectivecd.com
+  - DOMAIN-KEYWORD,office365.us
+  - DOMAIN-KEYWORD,live.com
+  - DOMAIN-KEYWORD,svc.ms
+  - DOMAIN-KEYWORD,office.com
+  - DOMAIN-KEYWORD,officeppe.com
