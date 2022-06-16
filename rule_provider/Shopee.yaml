@@ -1,0 +1,28 @@
+payload:
+  # > SHOPEE
+  # port 80 443 dan 20443
+  - DOMAIN-SUFFIX,wsa-sentry.shopeemobile.com
+  - DOMAIN-SUFFIX,api.shopee.co.id
+  - DOMAIN-SUFFIX,cf.shopee.co.id
+  - DOMAIN-SUFFIX,deo.shopeemobile.com
+  - DOMAIN-SUFFIX,mall.shopee.co.id
+  - DOMAIN-SUFFIX,external2.shopee.co.id
+  - DOMAIN-SUFFIX,shopee.co.id
+  - DOMAIN-SUFFIX,games.shopee.co.id
+  - DOMAIN-SUFFIX,livetech.shopee.co.id
+  - DOMAIN-SUFFIX,data-rep.livetech.shopee.co.id
+  - DOMAIN-SUFFIX,msdk.shopee.co.id
+  - DOMAIN-SUFFIX,live.shopee.co.id
+  - DOMAIN-SUFFIX,log-collector.shopee.co.id
+  - DOMAIN-SUFFIX,play-tx.vod.shopee.com
+  - DOMAIN-SUFFIX,feeds.shopee.co.id
+  - DOMAIN-SUFFIX,cf.shopee.sg
+  - DOMAIN-SUFFIX,df.infra.sz.shopee.co.id
+  - DOMAIN-SUFFIX,play-ws.vod.shopee.com
+  - DOMAIN-SUFFIX,seller-app.shopee.co.id
+  - DOMAIN-SUFFIX,seller.shopee.sg
+  - DOMAIN-SUFFIX,chatbot.shopee.co.id
+  - DOMAIN-SUFFIX,uss.ms.shopee.co.id
+  - DOMAIN-SUFFIX,play-tx.livestream.shopee.co.id
+  - DOMAIN-SUFFIX,chatroom-live.shopee.co.id
+  - DOMAIN-SUFFIX,c-api-bit.shopeemobile.com
