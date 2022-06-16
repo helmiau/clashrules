@@ -76,3 +76,9 @@ payload:
   - DOMAIN-SUFFIX,meetings.googleapis.com
   # > GOOGLE CLASSROOM
   - DOMAIN-SUFFIX,classroom.google.com
+  
+  # > Microsoft Teams
+  - DOMAIN,teams.events.data.microsoft.com
+  - DOMAIN-SUFFIX,teams.cdn.live.net
+  - DOMAIN-SUFFIX,teams.live.com
+  - DOMAIN-SUFFIX,teams.microsoft.com
