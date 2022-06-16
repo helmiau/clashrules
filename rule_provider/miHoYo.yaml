@@ -7,7 +7,7 @@ payload:
   - DOMAIN-SUFFIX,hoyoverse.com
   - DOMAIN-SUFFIX,n0vadesktop.com
   - DOMAIN-SUFFIX,mihoyo.com
-  - DOMAIN-KEYWORD,autopatchhk.yuanshen
+  # - DOMAIN-KEYWORD,autopatchhk.yuanshen
   # > GENSHIN IMPACT MASTER
   - DST-PORT,42472
   - DST-PORT,22101
