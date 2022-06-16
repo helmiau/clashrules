@@ -82,3 +82,26 @@ payload:
   - DOMAIN-SUFFIX,teams.cdn.live.net
   - DOMAIN-SUFFIX,teams.live.com
   - DOMAIN-SUFFIX,teams.microsoft.com
+  
+  # > Campuran
+  - '+.zoom.us'
+  - '+.meet.google.com'
+  - '+.ruangguru.com'
+  - '+.zenius.com'
+  - '+.office.com'
+  - '+.trouter.io'
+  - '+.skype.com'
+  - '+.skype.net'
+  - '+.cortana.ai'
+  - '+.customspeech.ai'
+  - '+.bing.com'
+  - '+.microsoft.com'
+  - '+.hivestreaming.com'
+  - '+.kollective.app'
+  - '+.kollectivecd.com'
+  - '+.office365.us'
+  - '+.live.com'
+  - '+.svc.ms'
+  - '+.office.com'
+  - '+.officeppe.com'
+
