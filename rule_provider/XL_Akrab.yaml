@@ -70,12 +70,13 @@ payload:
   - DOMAIN-SUFFIX,cdn.zoom.us
   - DOMAIN-SUFFIX,zoomca193-123-14-89mmr.cloud.zoom.us
   - DOMAIN-SUFFIX,zoomca193-123-1-56zc.cloud.zoom.us
+  - DST-PORT,8801
  
   # > AREA KHUSUS XL AKRAB
-  # > GOOGLE MEET
+  # > GOOGLE MEET, CLASSROOM, HANGOUTS
   - DOMAIN-SUFFIX,meetings.googleapis.com
-  # > GOOGLE CLASSROOM
   - DOMAIN-SUFFIX,classroom.google.com
+  - DOMAIN-SUFFIX,hangouts.googleapis.com
   
   # > Microsoft Teams
   - DOMAIN,teams.events.data.microsoft.com
