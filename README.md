@@ -1,21 +1,60 @@
-### Clash Premium and Rules Provider Repository
-This repository contains :
-1. Clash Core Switcher : Clash Core + Clash Adblock manager.
-2. Rules provider for traffic separator purpose.
-
-### OpenClash Script Manager
-What is this?. This is terminal script written in bash, which allow you to switch between original core and premium core clash, or updating core without manual installation/flashing new firmware. by follow the installation below :
-
-> Requirements : You have to install OpenClash or KoolClash first before installing using this script.
-
-1. Copy below codes, and paste it to terminal
+## OpenClash (OpenWrt) Rule Providers
+Repository ini berisi rule provider dari beberapa sumber yang sering dipakai di Indonesia, digunakan untuk pisah trafik koneksi. Rule yang tersedia saat ini:
 ```
-wget -O /bin/ocsm raw.githubusercontent.com/helmiau/HelmiWrt-OS/main/files/bin/ocsm -q --show-progress && chmod +x /bin/ocsm
+Facebook.yaml
+Instagram.yaml
+LINE.yaml
+Microsoft_Teams.yaml
+PUBGMobile.yaml
+Shopee.yaml
+Tiktok.yaml
+Twitter.yaml
+WhatsApp.yaml
+XL_Akrab.yaml
+Youtube.yaml
+miHoYo.yaml 
 ```
-2. Then run **ocsm** or **./ocsm**
-3. Then follow next intructions
 
+> HARAP MEMBACA DAN MEMAHAMI TIAP BARIS YANG ADA, AGAR KESALAHAN SEPELE BISA DIATASI SENDIRI !
 
-# Others
+## Cara Pakai
+1. Ubah file **`config.yaml`** yang kamu punya.
+2. Salin script dibawah ini, lalu letakkan di bawah barisan **`proxy_groups`** (baris dibawah ini hanya contoh, selebihnya silahkan improvisasi sendiri)
+
+    ```
+    # Rule Providers
+    # Check time conversion here https://www.timecalculator.net/hours-to-seconds
+    rule-providers:
+      XL_Akrab:
+        type: http
+        behavior: classical
+        path: "./rule_provider/XL_Akrab.yaml"
+        url: https://raw.githubusercontent.com/helmiau/clashrules/main/rule_provider/XL_Akrab.yaml
+        interval: 86400 # Update rules every 24 hours
+      Microsoft_Teams:
+        type: http
+        behavior: classical
+        path: "./rule_provider/Microsoft_Teams.yaml"
+        url: https://raw.githubusercontent.com/helmiau/clashrules/main/rule_provider/Microsoft_Teams.yaml
+        interval: 86400 # Update rules every 24 hours
+    rules:
+    # Rules before match global
+    - RULE-SET,XL_Akrab,DIRECT
+    - RULE-SET,Microsoft_Teams,DIRECT
+    # Listen all connections to GLOBAL proxy
+    - MATCH,GLOBAL
+    ```
+
+4. Buka **`OpenClash > Settings > General Settings`** lalu atur seperti contoh di bawah ini
+
+    ![image](https://user-images.githubusercontent.com/20932301/174243963-ae34021c-570d-4847-b693-9ed733ae18b3.png)
+
+5. Lalu tekan tombol **``ENABLE OPENCLASH``** di bagian bawah halaman Overview OpenClash
+
+## Credits
 - https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash
 - https://github.com/zzzt27/clashBlock
+- https://github.com/MasterWifiNetworkSolution/PLATINUM-OPENCLASH
+- https://github.com/hillz2/openclash_adblock
+
+
