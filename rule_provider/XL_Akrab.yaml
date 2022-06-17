@@ -81,6 +81,7 @@ payload:
   - DOMAIN-SUFFIX,meetings.googleapis.com
   - DOMAIN-SUFFIX,classroom.google.com
   - DOMAIN-SUFFIX,hangouts.googleapis.com
+  # MAPS
   - DOMAIN-SUFFIX,userlocation.googleapis.com
   - DOMAIN-SUFFIX,stun.l.google.com
   - DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com
@@ -99,6 +100,12 @@ payload:
   - DOMAIN-SUFFIX,streetviewpixels-pa.googleapis.com
   - DOMAIN-SUFFIX,maps.gstatic.com
   - DOMAIN-SUFFIX,maps.google.com
+  - DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com
+  # CLASSROOM
+  - DOMAIN-SUFFIX,dns.google
+  - DOMAIN-SUFFIX,clients3.google.com
+  - DOMAIN-SUFFIX,notifications-pa.googleapis.com
+  # PORTS
   - DST-PORT,19302
   - DST-PORT,19305
   
