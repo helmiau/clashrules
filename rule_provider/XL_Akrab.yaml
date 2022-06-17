@@ -97,6 +97,8 @@ payload:
   - DOMAIN-SUFFIX,gz0.googleusercontent.com
   - DOMAIN-SUFFIX,geoar.googleapis.com
   - DOMAIN-SUFFIX,streetviewpixels-pa.googleapis.com
+  - DOMAIN-SUFFIX,maps.gstatic.com
+  - DOMAIN-SUFFIX,maps.google.com
   - DST-PORT,19302
   - DST-PORT,19305
   
