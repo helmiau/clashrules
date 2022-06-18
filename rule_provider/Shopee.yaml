@@ -1,7 +1,6 @@
 payload:
   # Shopee
-  #- DOMAIN-SUFFIX,shopee.co.id
-  #- DOMAIN-SUFFIX,shopee.co.th
+  #- DOMAIN-KEYWORD,shopee
   #- DOMAIN-SUFFIX,shopee.com
   #- DOMAIN-SUFFIX,shopee.com.br
   #- DOMAIN-SUFFIX,shopee.com.my
@@ -14,5 +13,5 @@ payload:
   # Shopee Login and Checkout Only
   - DOMAIN-KEYWORD,api.shopee
   - DOMAIN-KEYWORD,c-api-bit.shopeemobile
-  - DOMAIN-KEYWORD,cf.shopee
+  # - DOMAIN-KEYWORD,cf.shopee
   - DOMAIN-KEYWORD,frd.shopee
