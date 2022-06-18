@@ -1,0 +1,30 @@
+payload:
+  # > ZOOM
+  - DOMAIN-SUFFIX,zoom.us
+  - DOMAIN-SUFFIX,google.zoom.us
+  - DOMAIN-SUFFIX,us02st1.zoom.us
+  - DOMAIN-SUFFIX,us03st1.zoom.us
+  - DOMAIN-SUFFIX,us04st1.zoom.us
+  - DOMAIN-SUFFIX,us02st2.zoom.us
+  - DOMAIN-SUFFIX,us03st2.zoom.us
+  - DOMAIN-SUFFIX,us04st2.zoom.us
+  - DOMAIN-SUFFIX,us02st3.zoom.us
+  - DOMAIN-SUFFIX,us03st3.zoom.us
+  - DOMAIN-SUFFIX,us04st3.zoom.us
+  - DOMAIN-SUFFIX,us02web.zoom.us
+  - DOMAIN-SUFFIX,zoom.ada.support
+  - DOMAIN-SUFFIX,st1.zoom.us
+  - DOMAIN-SUFFIX,us02zpns.zoom.us
+  - DOMAIN-SUFFIX,us04xmppapi.zoom.us
+  - DOMAIN-SUFFIX,us04st1.zoom.us
+  - DOMAIN-SUFFIX,us04xmpp1.zoom.us
+  - DOMAIN-SUFFIX,xmpp013.zoom.us
+  - DOMAIN-SUFFIX,logfiles.zoom.us
+  - DOMAIN-SUFFIX,cdn.zoom.us
+  - DOMAIN-SUFFIX,zoom-general.s3.amazonaws.com
+  - DOMAIN-SUFFIX,zoomca193-123-14-89mmr.cloud.zoom.us
+  - DOMAIN-SUFFIX,zoomca193-123-1-56zc.cloud.zoom.us
+  - DST-PORT,8801
+  - DST-PORT,8802
+  - DST-PORT,3478
+  - DST-PORT,3479
