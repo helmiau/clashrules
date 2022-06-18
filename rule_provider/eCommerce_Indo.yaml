@@ -12,7 +12,7 @@ payload:
   #- DOMAIN-SUFFIX,shopeemobile.com
   #- DOMAIN-SUFFIX,shp.ee
   # Shopee Login and Checkout Only
-  - DOMAIN-KEYWORD,api.shopee.co
-  - DOMAIN-KEYWORD,c-api-bit.shopeemobile.com
-  - DOMAIN-KEYWORD,cf.shopee.co
-  - DOMAIN-KEYWORD,frd.shopee.co
+  - DOMAIN-KEYWORD,api.shopee
+  - DOMAIN-KEYWORD,c-api-bit.shopeemobile
+  - DOMAIN-KEYWORD,cf.shopee
+  - DOMAIN-KEYWORD,frd.shopee
