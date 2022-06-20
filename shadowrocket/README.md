@@ -2,13 +2,20 @@
 
 Dokumen ini berisi beberapa contoh penulisan file.conf yang terdapat pada bagian **Shadowrocket - Config - Local Files - default.conf**.
 
+Rule koneksi bawaan:
+```
+PROXY 
+DIRECT 
+REJECT
+```
+
 - Contoh isi **`file.list`**
 ```
 DOMAIN-KEYWORD,112wan
 DOMAIN-SUFFIX,112wan
-DOMAIN-PREFIX,112wan
 URL-REGEX,^https?:\/\/\w+\.cloudfront\.net\/banner
 IP-CIDR,0.0.0.1/32,no-resolve
+USER-AGENT,cloudd*,DIRECT 
 ```
 
 - Contoh penulisan barisan rule provider/set dari file yang sudah ada di hosting GitHub terletak dibawah barisan **``[Rule]``**
