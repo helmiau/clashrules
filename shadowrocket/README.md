@@ -1,5 +1,6 @@
-### Format Penulisan file .conf di Config Shadowrocket iOS
+### Tutorial Config file.conf pada Shadowrocket iOS
 
+Dokumen ini berisi beberapa contoh penulisan file.conf yang terdapat pada bagian **Shadowrocket - Config - Local Files - default.conf**.
 
 - Contoh isi **`file.list`**
 ```
@@ -8,10 +9,9 @@ DOMAIN-SUFFIX,112wan
 DOMAIN-PREFIX,112wan
 URL-REGEX,^https?:\/\/\w+\.cloudfront\.net\/banner
 IP-CIDR,0.0.0.1/32,no-resolve
-
 ```
 
-- Penulisan rule provider/set dari file yang sudah ada di hosting GitHub terletak dibawah barisan **``[Rule]``**
+- Contoh penulisan barisan rule provider/set dari file yang sudah ada di hosting GitHub terletak dibawah barisan **``[Rule]``**
 ```
 [Rule]
 # Advertising
@@ -32,7 +32,29 @@ GEOIP,CN,DIRECT
 FINAL,PROXY
 ```
 
-- Contoh Penulisan barisan **``[URL Rewrite]``**
+- Contoh penulisan barisan **``[Host]``**
+```
+[Host]
+*testflight.apple.com = server:8.8.4.4
+*.qq.com = server:119.28.28.28
+*.tencent.com = server:119.28.28.28
+*.weixin.com = server:119.28.28.28
+*.bilibili.com = server:119.29.29.29
+hdslb.com = server:119.29.29.29
+*.163.com = server:119.29.29.29
+*.126.com = server:119.29.29.29
+*.126.net = server:119.29.29.29
+*.127.net = server:119.29.29.29
+*.netease.com = server:119.29.29.29
+*.mi.com = server:119.29.29.29
+*.xiaomi.com = server:119.29.29.29
+*.pcbeta.com = 120.52.19.113
+mtalk.google.com = 108.177.125.188
+dl.google.com = server:119.29.29.29
+dl.l.google.com = server:119.29.29.29
+```
+
+- Contoh penulisan barisan **``[URL Rewrite]``**
 ```
 [URL Rewrite]
 # Redirect Google Search Service
