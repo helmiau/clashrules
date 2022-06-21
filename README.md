@@ -1,4 +1,4 @@
-## OpenClash (OpenWrt) Rule Providers
+## Rule Providers for Clash (OpenWrt, iOS)
 Aplikasi yang digunakan:
 - [OpenClash for OpenWrt](https://github.com/vernesong/OpenClash)
     aplikasi ini sudah jelas untuk OpenWrt.
