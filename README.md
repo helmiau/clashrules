@@ -1,4 +1,12 @@
 ## OpenClash (OpenWrt) Rule Providers
+Aplikasi yang digunakan:
+- [OpenClash for OpenWrt](https://github.com/vernesong/OpenClash)
+    aplikasi ini sudah jelas untuk OpenWrt.
+- [Stash for iOS](https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349)
+    aplikasi ini UI nya bagus, bisa menggunakan config, rule dari OpenClash. Tapi menyebabkan baterainya boros
+- [Shadowrocket for iOS](https://apps.apple.com/us/app/shadowrocket/id932747118)
+    aplikasi ini UI nya simple jadi tidak terlalu boros baterai, tapi butuh penyesuaian jika menggunakan config dari OpenClash/Stash. Beberapa contoh konfigurasinya bisa di lihat di [Contoh config.conf Shadowrocket](shadowrocket/README.md)
+
 Repository ini berisi rule provider dari beberapa sumber yang sering dipakai di Indonesia, digunakan untuk pisah trafik koneksi. Rule yang tersedia saat ini:
 ```
 Facebook.yaml
