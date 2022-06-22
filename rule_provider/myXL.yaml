@@ -1,0 +1,6 @@
+payload:
+  # > myXL App
+  # Client Patch
+  - DOMAIN-KEYWORD,xlaxiata
+  - DOMAIN-KEYWORD,xlaxiata2
+  - DOMAIN-KEYWORD,xlaxiata-resources
