@@ -7,12 +7,12 @@
 # Run setiap 2 jam sekali
 #=================================================
 
-name: Clash Rule Generator A to G
+name: Clash Rule to Shadowrocket Converter
 
 on:
   workflow_dispatch:
 #  schedule:
-#    - cron: 0 */2 * * *
+#    - cron: 0 15 * * *
 #  watch:
 #    types: started
 
@@ -24,44 +24,16 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - rule_name: 115
-          - rule_name: 12306
-          - rule_name: 17173
-          - rule_name: 178
-          - rule_name: 17zuoye
-          - rule_name: 360
-          - rule_name: 36kr
-          - rule_name: 4399
-          - rule_name: 51Job
-          - rule_name: 56
-          - rule_name: 58TongCheng
-          - rule_name: 6JianFang
-          - rule_name: 8btc
-          - rule_name: 9News
-          - rule_name: 9to5
-          - rule_name: ABC
-          - rule_name: AbemaTV
-          - rule_name: Acer
-          - rule_name: AcFun
-          - rule_name: Adidas
           - rule_name: Adobe
           - rule_name: Advertising
           - rule_name: AdvertisingLite
           - rule_name: AdvertisingMiTV
           - rule_name: AdvertisingTest
-          - rule_name: AFP
-          - rule_name: Agora
-          - rule_name: Akamai
-          - rule_name: Alibaba
           - rule_name: AliPay
-          - rule_name: All4
+          - rule_name: Alibaba
           - rule_name: Amazon
           - rule_name: AmazonPrimeVideo
-          - rule_name: Americasvoice
-          - rule_name: Anjuke
-          - rule_name: AnTianKeJi
-          - rule_name: AOL
-          - rule_name: Apkpure
+          - rule_name: AppStore
           - rule_name: Apple
           - rule_name: AppleDaily
           - rule_name: AppleMail
@@ -69,151 +41,88 @@ jobs:
           - rule_name: AppleNews
           - rule_name: AppleProxy
           - rule_name: AppleTV
-          - rule_name: AppStore
-          - rule_name: AsianMedia
-          - rule_name: Atlassian
-          - rule_name: ATTWatchTV
-          - rule_name: Bahamut
           - rule_name: Baidu
-          - rule_name: BaiFenDian
-          - rule_name: BaiShanYunKeJi
-          - rule_name: BaoFengYingYin
-          - rule_name: Battle
-          - rule_name: BBC
-          - rule_name: Bestbuy
-          - rule_name: BianFeng
-          - rule_name: BiliBili
-          - rule_name: bilibiliIntl
           - rule_name: BlackList
           - rule_name: Blizzard
-          - rule_name: Bloomberg
-          - rule_name: Blued
-          - rule_name: BMW
-          - rule_name: BOC
-          - rule_name: BOCOM
-          - rule_name: Bootcss
-          - rule_name: BoXun
-          - rule_name: BrightCove
-          - rule_name: Buypass
-          - rule_name: ByteDance
-          - rule_name: CableTV
-          - rule_name: CaiNiao
-          - rule_name: CaiXinChuanMei
-          - rule_name: Camera360
-          - rule_name: Canon
-          - rule_name: CAS
-          - rule_name: CBS
-          - rule_name: CCB
-          - rule_name: CCTV
-          - rule_name: CEB
-          - rule_name: CGB
-          - rule_name: ChengTongWangPan
-          - rule_name: China
-          - rule_name: ChinaIPs
-          - rule_name: ChinaIPsBGP
-          - rule_name: ChinaMedia
-          - rule_name: ChinaMobile
-          - rule_name: ChinaNews
-          - rule_name: ChinaTelecom
-          - rule_name: ChinaTest
-          - rule_name: ChinaUnicom
-          - rule_name: Chromecast
-          - rule_name: CHT
-          - rule_name: ChuangKeTie
-          - rule_name: ChunYou
-          - rule_name: CIBN
-          - rule_name: Cisco
-          - rule_name: CITIC
-          - rule_name: CKJR
           - rule_name: Classic
           - rule_name: Cloudflare
           - rule_name: Clubhouse
           - rule_name: ClubhouseIP
-          - rule_name: CMB
-          - rule_name: CNBC
-          - rule_name: CNKI
-          - rule_name: CNN
-          - rule_name: CNNIC
-          - rule_name: Comodo
           - rule_name: Cryptocurrency
-          - rule_name: CSDN
-          - rule_name: Dailymail
-          - rule_name: Dailymotion
-          - rule_name: DaMai
-          - rule_name: Dandanplay
-          - rule_name: DanDanZan
-          - rule_name: DangDang
-          - rule_name: DAZN
-          - rule_name: Dedao
-          - rule_name: Deepin
           - rule_name: Deezer
-          - rule_name: Dell
           - rule_name: Developer
-          - rule_name: DiabloIII
-          - rule_name: DianCeWangKe
-          - rule_name: DiDi
-          - rule_name: DigiCert
-          - rule_name: DiLianWangLuo
-          - rule_name: DingTalk
-          - rule_name: DingXiangYuan
           - rule_name: Discord
-          - rule_name: DiscoveryPlus
-          - rule_name: DiSiFanShi
           - rule_name: Disney
           - rule_name: Disqus
           - rule_name: Docker
-          - rule_name: Domob
-          - rule_name: Dood
-          - rule_name: DouBan
-          - rule_name: Douyu
           - rule_name: Download
           - rule_name: Dropbox
-          - rule_name: DtDNS
-          - rule_name: Dubox
-          - rule_name: Duckduckgo
-          - rule_name: DynDNS
-          - rule_name: Dynu
-          - rule_name: EA
-          - rule_name: EastMoney
-          - rule_name: eBay
-          - rule_name: Eleme
-          - rule_name: Embl
-          - rule_name: Emojipedia
-          - rule_name: EncoreTVB
-          - rule_name: Epic
-          - rule_name: Espn
           - rule_name: Facebook
-          - rule_name: FanFou
-          - rule_name: FeiZhu
-          - rule_name: FengHuangWang
-          - rule_name: FengXiaWangLuo
-          - rule_name: Fiio
-          - rule_name: FindMy
-          - rule_name: FitnessPlus
-          - rule_name: FlipBoard
-          - rule_name: Fox
-          - rule_name: FOXNOW
-          - rule_name: FOXPlus
-          - rule_name: friDay
-          - rule_name: Funshion
           - rule_name: Game
-          - rule_name: GaoDe
           - rule_name: Garena
-          - rule_name: Gettyimages
-          - rule_name: Gigabyte
-          - rule_name: GitBook
           - rule_name: GitHub
           - rule_name: GitLab
           - rule_name: Global
-          - rule_name: GlobalMedia
-          - rule_name: Globalsign
-          - rule_name: Gog
           - rule_name: Google
           - rule_name: GoogleDrive
           - rule_name: GoogleSearch
           - rule_name: GoogleVoice
-          - rule_name: Gucci
-          - rule_name: GuiGuDongLi
+          - rule_name: Hijacking
+          - rule_name: Huawei
+          - rule_name: Imgur
+          - rule_name: Instagram
+          - rule_name: JOOX
+          - rule_name: Jquery
+          - rule_name: Keep
+          - rule_name: Lan
+          - rule_name: Line
+          - rule_name: LineTV
+          - rule_name: MEGA
+          - rule_name: Mail
+          - rule_name: Microsoft
+          - rule_name: Naver
+          - rule_name: NaverTV
+          - rule_name: Netflix
+          - rule_name: OneDrive
+          - rule_name: Pixiv
+          - rule_name: PrimeVideo
+          - rule_name: Privacy
+          - rule_name: PrivateTracker
+          - rule_name: Proxy
+          - rule_name: Python
+          - rule_name: Scholar
+          - rule_name: Shopee
+          - rule_name: Shopify
+          - rule_name: Siri
+          - rule_name: SoundCloud
+          - rule_name: SourceForge
+          - rule_name: Speedtest
+          - rule_name: Spotify
+          - rule_name: Steam
+          - rule_name: SteamCN
+          - rule_name: Supercell
+          - rule_name: SystemOTA
+          - rule_name: Telegram
+          - rule_name: TelegramNL
+          - rule_name: TelegramSG
+          - rule_name: TelegramUS
+          - rule_name: Tencent
+          - rule_name: TencentVideo
+          - rule_name: TestFlight
+          - rule_name: TikTok
+          - rule_name: Tumblr
+          - rule_name: Twitch
+          - rule_name: Twitter
+          - rule_name: Unity
+          - rule_name: VISA
+          - rule_name: WeTV
+          - rule_name: Weibo
+          - rule_name: Whatsapp
+          - rule_name: WhiteList
+          - rule_name: WiFiMaster
+          - rule_name: XiaoMi
+          - rule_name: YouTube
+          - rule_name: YouTubeMusic
           - rule_name: All_In_One
 
     env:
@@ -238,7 +147,9 @@ jobs:
             find allsource rule_provider -type f -name '*.yaml'
             find allsource -type f -name 'All_In_One.*' -exec rm -f "{}" \;
             echo "---- End of List source files :"
-            echo -e "# ${RULENAME}\npayload:\n" > "$RULENAME.yaml";
+            if ! grep -q '$RULENAME'; then
+                echo -e "# ${RULENAME}\npayload:\n" > "$RULENAME.yaml";
+            fi
             find allsource rule_provider -type f -name '*.yaml' | while read -r FILE ; do
                 echo -e $(readlink -f ${FILE});
                 sed -i "/^#/d" "${FILE}";
@@ -273,20 +184,37 @@ jobs:
           echo -e "------- Listing YAML files"
           ls | grep "yaml"
           echo -e "------- End of Listing YAML files"
-          echo "RELEASE_NAME=HelmiClash $(date +%Y.%m.%d)" >> $GITHUB_ENV
-          echo "TAG_NAME=clashrules-$(date +%Y.%m.%d)" >> $GITHUB_ENV
+          echo "RELEASE_NAME=ClashRules" >> $GITHUB_ENV
+          echo "TAG_NAME=clashrules" >> $GITHUB_ENV
+
+      - name: Delete Older Releases and Tags
+        uses: dev-drprasad/delete-older-releases@v0.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          keep_latest: 0
+          delete_tags: true
+          delete_tag_pattern: clashrules
+
+      - name: Waiting 20 secs for deleting releases
+        id: tunggu
+        run: |
+          sleep 20
+          echo "::set-output name=status::success"
 
       - name: Release and Upload Assets
+        if: steps.tunggu.outputs.status == 'success' && !cancelled()
         uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ env.RELEASE_NAME }}
-          tag_name: ${{ env.TAG_NAME }}
+          name: README-STDIIS
+          tag_name: clashrules
           draft: false
           prerelease: false
           files: "*.yaml"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+          body: "Updated : ${{ steps.waktu.outputs.waktu }}"
+
       - name: Delete Workflow Runs
         uses: GitRML/delete-workflow-runs@main
         with:
