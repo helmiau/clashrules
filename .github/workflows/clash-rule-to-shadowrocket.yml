@@ -43,7 +43,7 @@ jobs:
         id: generate
         run: |
           find . -type f -name '.yaml' | while read FILE ; do
-            newfile="$(echo ${FILE} | sed 's/.yaml/.list/')" ;
+            newfile="$(echo ${FILE} | sed 's/yaml/list/')" ;
             echo -e $(readlink -f ${FILE}) ;
             mv "${FILE}" "${newfile}" ;
           done
