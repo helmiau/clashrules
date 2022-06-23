@@ -50,6 +50,12 @@ jobs:
           sed -i 's/payload://g' $(grep -rli "payload" rule_provider)
           sed -i 's/  - //g' $(grep -rli "  -" rule_provider)
           sed -i 's/  //g' $(grep -rli "  " rule_provider)
+          mv -v rule_provider/* shadowrocket
+          echo "========= LS RULE PROVIDER ========="
+          ls rule_provider
+          echo "========= LS SHADOWROCKET ========="
+          ls shadowrocket
+          echo "=========== END LS TASKS =========="
           echo "::set-output name=status::success"
 
       - name: Update GitHub page data
@@ -57,7 +63,7 @@ jobs:
         uses: test-room-7/action-update-file@v1.5.0
         with:
           commit-msg: "Shadowrocket rules updated: ${{ steps.waktu.outputs.waktu }}"
-          file-path: "rule_provider/*.list"
+          file-path: "shadowrocket/*.list"
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Delete Workflow Runs
