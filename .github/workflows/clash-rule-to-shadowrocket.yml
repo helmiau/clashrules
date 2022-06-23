@@ -50,9 +50,10 @@ jobs:
           sed -i 's/payload://g' $(grep -rli "payload" rule_provider)
           sed -i 's/  - //g' $(grep -rli "  -" rule_provider)
           sed -i 's/  //g' $(grep -rli "  " rule_provider)
+          echo "::set-output name=status::success"
 
       - name: Update GitHub page data
-        if: steps.tunggu.outputs.status == 'success' && !cancelled()
+        if: steps.generate.outputs.status == 'success' && !cancelled()
         uses: test-room-7/action-update-file@v1.5.0
         with:
           commit-msg: "Shadowrocket rules updated: ${{ steps.waktu.outputs.waktu }}"
