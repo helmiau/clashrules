@@ -42,12 +42,7 @@ jobs:
       - name: Converting files
         id: generate
         run: |
-          find . -type f -name 'yaml' | while read FILE ; do
-            newfile="$(echo ${FILE} | sed 's/yaml/list/')" ;
-            echo -e $(readlink -f ${FILE}) ;
-            mv "${FILE}" "${newfile}" ;
-            echo "File ${FILE} renamed to ${newfile}..."
-          done
+          find . -name "*.yaml" -exec sh -c 'mv "$1" "${1%.yaml}.list"' _ {} \;
           sed -i 's/payload://g' $(grep -rli "payload" rule_provider)
           sed -i 's/  - //g' $(grep -rli "  -" rule_provider)
           sed -i 's/  //g' $(grep -rli "  " rule_provider)
