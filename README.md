@@ -64,5 +64,5 @@ miHoYo.yaml
 - https://github.com/zzzt27/clashBlock
 - https://github.com/MasterWifiNetworkSolution/PLATINUM-OPENCLASH
 - https://github.com/hillz2/openclash_adblock
-
+- [Number Generator](https://textmechanic.com/text-tools/numeration-tools/generate-list-numbers/)
 
