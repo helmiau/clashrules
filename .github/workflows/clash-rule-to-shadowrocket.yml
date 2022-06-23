@@ -48,8 +48,8 @@ jobs:
             mv "${FILE}" "${newfile}" ;
           done
           sed -i 's/payload://g' $(grep -rli "payload" rule_provider)
-          sed -i 's/  - //g' $(grep -rli "payload" rule_provider)
-          sed -i 's/  //g' $(grep -rli "payload" rule_provider)
+          sed -i 's/  - //g' $(grep -rli "  -" rule_provider)
+          sed -i 's/  //g' $(grep -rli "  " rule_provider)
 
       - name: Update GitHub page data
         if: steps.tunggu.outputs.status == 'success' && !cancelled()
