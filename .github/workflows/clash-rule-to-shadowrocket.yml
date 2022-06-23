@@ -37,7 +37,7 @@ jobs:
       - name: Generate current time
         id: waktu
         run: |
-          echo "::set-output name=waktu::$(date +'%d %m %Y %H:%M:%S')"
+          echo "::set-output name=waktu::$(date +'%d-%m-%Y %H:%M:%S')"
 
       - name: Converting files
         id: generate
