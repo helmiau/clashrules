@@ -1,0 +1,16 @@
+
+DOMAIN-SUFFIX,genshinimpact.com
+DOMAIN-SUFFIX,honkaiimpact3.com
+DOMAIN-SUFFIX,honkaistarrail.com
+DOMAIN-SUFFIX,hoyo.link
+DOMAIN-SUFFIX,hoyolab.com
+DOMAIN-SUFFIX,hoyoverse.com
+DOMAIN-SUFFIX,n0vadesktop.com
+DOMAIN-SUFFIX,mihoyo.com
+# - DOMAIN-KEYWORD,autopatchhk.yuanshen
+# > GENSHIN IMPACT PORTS
+DST-PORT,42472
+DST-PORT,22101
+DST-PORT,22102
+DST-PORT,7680
+
