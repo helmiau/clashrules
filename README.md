@@ -5,23 +5,9 @@ Aplikasi yang digunakan:
 - [Stash for iOS](https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349)
     aplikasi ini UI nya bagus, bisa menggunakan config, rule dari OpenClash. Tapi menyebabkan baterainya boros
 - [Shadowrocket for iOS](https://apps.apple.com/us/app/shadowrocket/id932747118)
-    aplikasi ini UI nya simple jadi tidak terlalu boros baterai, tapi butuh penyesuaian jika menggunakan config dari OpenClash/Stash. Beberapa contoh konfigurasinya bisa di lihat di [Contoh config.conf Shadowrocket](shadowrocket/README.md)
+    aplikasi ini UI nya simple jadi tidak terlalu boros baterai, tapi butuh penyesuaian jika menggunakan config dari OpenClash/Stash. Beberapa contoh konfigurasinya bisa di lihat di [contoh config.conf Shadowrocket](shadowrocket/README.md), untuk rule providernya bisa [dilihat disini](shadowrocket/)
 
-Repository ini berisi rule provider dari beberapa sumber yang sering dipakai di Indonesia, digunakan untuk pisah trafik koneksi. Rule yang tersedia saat ini:
-```
-Facebook.yaml
-Instagram.yaml
-LINE.yaml
-Microsoft_Teams.yaml
-PUBGMobile.yaml
-Shopee.yaml
-Tiktok.yaml
-Twitter.yaml
-WhatsApp.yaml
-XL_Akrab.yaml
-Youtube.yaml
-miHoYo.yaml 
-```
+Repository ini berisi rule provider dari beberapa sumber yang sering dipakai di Indonesia, digunakan untuk pisah trafik koneksi. Rule yang tersedia saat ini bisa [dilihat disini](rule_provider/)
 
 > HARAP MEMBACA DAN MEMAHAMI TIAP BARIS YANG ADA, AGAR KESALAHAN SEPELE BISA DIATASI SENDIRI !
 
