@@ -1,6 +1,6 @@
 ### Index Shadowrocket Wiki
   - [Contoh config yang didukung oleh Shadowrocket.conf](#wiki-config-fileconf-pada-shadowrocket-ios)
-  - [Config Adblock via Shadowrocket](#wiki-config-fileconf-pada-shadowrocket-ios)
+  - [Config Adblock via Shadowrocket](#adblock-via-shadowrocket)
 
 ### Wiki Config file.conf pada Shadowrocket iOS
 
@@ -83,7 +83,7 @@ dl.l.google.com = server:119.29.29.29
 ^https?:\/\/(www.)?yhd\.com\/ https://yhd.com/ 302
 ```
 
-### ADBLOCK via Shadowrocket
+### AdBlock via Shadowrocket
 Cara import:
   1. Buka **``Shadowrocket``**.
   2. Pilih tab **``Config``** dibawah (yang gambar folder).
