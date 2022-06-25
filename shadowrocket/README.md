@@ -84,6 +84,11 @@ dl.l.google.com = server:119.29.29.29
 ```
 
 ### AdBlock via Shadowrocket
+Sebelum memasukkan config adblock ini, pengguna **``wajib``** memiliki:
+  1. Aplikasi Shadowrocket.
+  2. Internet/Kuota utama.
+  3. Otak yang bisa dipakai mikir sedikit-sedikit, nalarnya dipakai.
+
 Cara import:
   1. Buka **``Shadowrocket``**.
   2. Pilih tab **``Config``** dibawah (yang gambar folder).
