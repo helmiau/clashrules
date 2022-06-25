@@ -10,6 +10,11 @@ payload:
   - DOMAIN-KEYWORD,yonxatuor
   - DOMAIN-KEYWORD,sortyrails
   - DOMAIN-KEYWORD,jomtingi
+  - DOMAIN-KEYWORD,lhbnqkns
+  - IP-CIDR,139.45.197.151/32,no-resolve
+  - IP-CIDR,139.45.197.152/32,no-resolve
+  - IP-CIDR,139.45.197.153/32,no-resolve
+  - IP-CIDR,139.45.197.154/32,no-resolve
   # Komiku
   - DOMAIN-KEYWORD,udomyeasted
   # Susu
