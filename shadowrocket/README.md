@@ -95,7 +95,11 @@ Cara import:
   3. Lihat **``Remote Files``**
   4. Tekan **``Add Configuration``**
   5. Masukkan URL ini:
-      ``https://github.com/helmiau/clashrules/raw/main/shadowrocket/adsbagong.conf``
+
+      ```
+      https://github.com/helmiau/clashrules/raw/main/shadowrocket/adsbagong.conf
+      ```
+
   6. Lalu tekan tombol **``Download``**
   7. Lalu lihat bagian **``Local Files``**, tekan tulisan **``adsbagong.conf``**, lalu pilih **``Use Config``**.
   8. Kembali ke halaman awal Shadowrocket, yaitu tab **``Home``**.
