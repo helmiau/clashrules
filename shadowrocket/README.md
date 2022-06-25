@@ -1,4 +1,8 @@
-### Tutorial Config file.conf pada Shadowrocket iOS
+### Index Shadowrocket Wiki
+  - [Contoh config yang didukung oleh Shadowrocket.conf](#)
+  - [Config Adblock via Shadowrocket](#)
+
+### Wiki Config file.conf pada Shadowrocket iOS
 
 Dokumen ini berisi beberapa contoh penulisan file.conf yang terdapat pada bagian **Shadowrocket - Config - Local Files - default.conf**.
 
@@ -79,3 +83,32 @@ dl.l.google.com = server:119.29.29.29
 ^https?:\/\/(www.)?yhd\.com\/ https://yhd.com/ 302
 ```
 
+### ADBLOCK via Shadowrocket
+Cara import:
+  1. Buka **``Shadowrocket``**.
+  2. Pilih tab **``Config``** dibawah (yang gambar folder).
+  3. Lihat **``Remote Files``**
+  4. Tekan **``Add Configuration``**
+  5. Masukkan URL ini:
+      ``https://github.com/helmiau/clashrules/raw/main/shadowrocket/adsbagong.conf``
+  6. Lalu tekan tombol **``Download``**
+  7. Lalu lihat bagian **``Local Files``**, tekan tulisan **``adsbagong.conf``**, lalu pilih **``Use Config``**.
+  8. Kembali ke halaman awal Shadowrocket, yaitu tab **``Home``**.
+  9. Pilih **``Global Routing``** ke **``Config``**
+  10. Lalu aktifkan Shadowrocketnya dengan menekan tombol On/Off disebelah tulisan **Not Connected** di halaman awal Shadowrocket.
+
+Tambahan untuk mengubah koneksi langsung dengan VPN di **``Local Servers``** pada halaman **``Home``** Shadowrocket.
+  - Jika ingin menggunakan koneksi VPN, silahkan ikuti langkah berikut
+      1. Pergi ke tab **``Config``** - **``Local Files``**
+      2. Tekan ikon **``(i)``** disebelah kanan tulisan **``adsbagong.conf``**.
+      3. Pilih **``Replace Policy``**.
+      4. Tekan ikon **``(i)``** disebelah kolom **``Find``**, lalu cari **``DIRECT``**.
+      5. Setelah itu, Tekan ikon **``(i)``** disebelah kolom **``Replace``**, lalu cari **``LOCAL SERVERS``**.
+      6. Tekan **``DONE``**, lalu tunggu beberapa saat.
+      7. Config selesai diubah.
+  - Jika ingin kembali menggunakan koneksi langsung alias tanpa VPN, silahkan ikuti langkah berikut:
+      1. Ikuti langkah sebelumnya dari nomor 1 sampai selesai.
+      2. Hanya saja, ubah kolom **``Find``** ke **``LOCAL SERVERS``**.
+      3. Lalu ubah kolom **``Replace``** ke **``DIRECT``**.
+      4. Selesai.
+  
