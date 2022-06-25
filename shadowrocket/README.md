@@ -86,7 +86,7 @@ dl.l.google.com = server:119.29.29.29
 ### AdBlock via Shadowrocket
 Sebelum memasukkan config adblock ini, pengguna **``wajib``** memiliki:
   1. Aplikasi Shadowrocket.
-  2. Internet/Kuota utama.
+  2. Koneksi internet minimal 30mb.
   3. Otak yang bisa dipakai mikir sedikit-sedikit, nalarnya dipakai.
 
 Cara import:
