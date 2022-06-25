@@ -32,6 +32,7 @@ payload:
   - DOMAIN-KEYWORD,realsrv
   - DOMAIN-KEYWORD,samghasps
   - DOMAIN-KEYWORD,cdnasu
+  #- DOMAIN-KEYWORD,cdncok
   - DOMAIN-KEYWORD,qqjar
   - DOMAIN-KEYWORD,rivne
   - DOMAIN-KEYWORD,runative-syndicate
