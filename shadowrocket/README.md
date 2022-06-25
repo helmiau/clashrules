@@ -1,6 +1,6 @@
 ### Index Shadowrocket Wiki
-  - [Contoh config yang didukung oleh Shadowrocket.conf](#)
-  - [Config Adblock via Shadowrocket](#)
+  - [Contoh config yang didukung oleh Shadowrocket.conf](#wiki-config-fileconf-pada-shadowrocket-ios)
+  - [Config Adblock via Shadowrocket](#wiki-config-fileconf-pada-shadowrocket-ios)
 
 ### Wiki Config file.conf pada Shadowrocket iOS
 
@@ -107,8 +107,8 @@ Tambahan untuk mengubah koneksi langsung dengan VPN di **``Local Servers``** pad
       6. Tekan **``DONE``**, lalu tunggu beberapa saat.
       7. Config selesai diubah.
   - Jika ingin kembali menggunakan koneksi langsung alias tanpa VPN, silahkan ikuti langkah berikut:
-      1. Ikuti langkah sebelumnya dari nomor 1 sampai selesai.
-      2. Hanya saja, ubah kolom **``Find``** ke **``LOCAL SERVERS``**.
+      1. Ikuti langkah diatas sampai selesai.
+      2. Hanya saja, ubah kolom **``Find``** (pada pilihan **``Replace Policy``**) ke **``LOCAL SERVERS``**.
       3. Lalu ubah kolom **``Replace``** ke **``DIRECT``**.
       4. Selesai.
   
