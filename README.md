@@ -50,5 +50,6 @@ Repository ini berisi rule provider dari beberapa sumber yang sering dipakai di 
 - https://github.com/zzzt27/clashBlock
 - https://github.com/MasterWifiNetworkSolution/PLATINUM-OPENCLASH
 - https://github.com/hillz2/openclash_adblock
-- [Number Generator](https://textmechanic.com/text-tools/numeration-tools/generate-list-numbers/)
+- [Number Generator - textmechanic.com](https://textmechanic.com/text-tools/numeration-tools/generate-list-numbers/)
+- [Number Generator - pinetools.com](https://pinetools.com/generate-list-numbers) this is better tool for number generation.
 

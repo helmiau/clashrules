@@ -1,0 +1,21 @@
+# https://nanangmrk.com/daftar-port-game-terbaru-2021/
+payload:
+  # TCP
+  - DST-PORT,10012
+  - DST-PORT,17500
+  
+  # UDP
+  - DST-PORT,10491
+  - DST-PORT,10010
+  - DST-PORT,10013
+  - DST-PORT,10612
+  - DST-PORT,20002
+  - DST-PORT,20001
+  - DST-PORT,20000
+  - DST-PORT,12235
+  - DST-PORT,13748
+  - DST-PORT,13972
+  - DST-PORT,13894
+  - DST-PORT,11455
+  - DST-PORT,10096
+  - DST-PORT,10039

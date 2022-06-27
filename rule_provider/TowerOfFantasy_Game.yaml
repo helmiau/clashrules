@@ -1,0 +1,5 @@
+payload:
+  # In-Game Ports
+  - DST-PORT,30031
+  - DST-PORT,30194
+  - DST-PORT,30148
