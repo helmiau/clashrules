@@ -1,0 +1,8 @@
+payload:
+  # Home Ports
+  - DST-PORT,5010
+  - DST-PORT,5055
+  - DST-PORT,5058
+  
+  # In-game Ports
+  - DST-PORT,5056
