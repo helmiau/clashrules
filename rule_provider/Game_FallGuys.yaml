@@ -9,13 +9,18 @@ payload:
   - DST-PORT,27036
 
   # TCP/UDP - PC EpicGames
+  - DST-PORT,8077
   - DST-PORT,8177
   - DST-PORT,42001
-  - DOMAIN-KEYWORD,rtcp.on.epicgames.com
+  - DOMAIN-SUFFIX,api.epicgames.dev
+  - DOMAIN-SUFFIX,connect.epicgames.dev
+  - DOMAIN-SUFFIX,connect.ol.epicgames.com
+  - DOMAIN-SUFFIX,gateway.fallguys.oncatapult.com
+  - DOMAIN-SUFFIX,login.fallguys.oncatapult.com
+  - DOMAIN-SUFFIX,rtcp.on.epicgames.com
   # catalog-public-service-prod06.ol.epicgames.co
   # fallguys-assets.gamefuel.info
   # 45.35.35.218:8177
-  - DOMAIN-KEYWORD,login.fallguys.oncatapult.com # login ingame
 
   # TCP/UDP - Playstation 4
   - DST-PORT,3074
