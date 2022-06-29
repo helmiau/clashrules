@@ -18,6 +18,7 @@ payload:
   - DOMAIN-SUFFIX,gateway.fallguys.oncatapult.com
   - DOMAIN-SUFFIX,login.fallguys.oncatapult.com
   - DOMAIN-SUFFIX,rtcp.on.epicgames.com
+  - DOMAIN-KEYWORD,fg-matchmaking-public-service-live-a
   # catalog-public-service-prod06.ol.epicgames.co
   # fallguys-assets.gamefuel.info
   # 45.35.35.218:8177
