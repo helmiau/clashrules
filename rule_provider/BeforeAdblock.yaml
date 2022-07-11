@@ -2,3 +2,4 @@ payload:
   - DOMAIN,semawur.com
   - DOMAIN,ouo.io
   - DOMAIN,amp-api-edge.apps.apple.com
+  - IP,45.12.2.2 #kuronime
