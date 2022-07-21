@@ -1,0 +1,7 @@
+payload:
+  # > Zerotier VPN Remote
+  - DOMAIN-SUFFIX,zerotier.com
+  - DST-PORT,9993
+  - DST-PORT,29994
+  - DST-PORT,40775
+  - DST-PORT,43215
