@@ -24,6 +24,6 @@ jobs:
           chmod +x $GITHUB_WORKSPACE/ocmetawss
           sed -i 's|/etc/openclash|$GITHUB_WORKSPACE/openclash|g' $GITHUB_WORKSPACE/ocmetawss
           bash $GITHUB_WORKSPACE/ocmetawss arm64
-          sleep 10
-          ls $GITHUB_WORKSPACE/openclash/core
+          echo "=========== Filesize =========="
+          ls -lh $GITHUB_WORKSPACE/openclash/core/clash_meta
           echo "=========== END TASK =========="
