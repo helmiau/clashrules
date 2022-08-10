@@ -1,0 +1,28 @@
+#=================================================
+# Description: Test Script
+# Script by helmiau.com
+#=================================================
+
+name: Test Bash Script
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Converting files
+        id: generate
+        run: |
+          echo "=========== Start TASK =========="
+          wget -O /root/ocmetawss https://raw.githubusercontent.com/helmiau/openwrt-config/main/others/ocmetawss
+          chmod +x /root/ocmetawss
+          ./root/ocmetawss arm64
+          sleep 10
+          ls /etc/openclash/core
+          echo "=========== END TASK =========="
