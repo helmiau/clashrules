@@ -23,7 +23,7 @@ jobs:
           wget -O $GITHUB_WORKSPACE/ocmetawss https://raw.githubusercontent.com/helmiau/openwrt-config/main/others/ocmetawss
           chmod +x $GITHUB_WORKSPACE/ocmetawss
           sed -i 's|/etc/openclash|$GITHUB_WORKSPACE/openclash|g' $GITHUB_WORKSPACE/ocmetawss
-          .$GITHUB_WORKSPACE/ocmetawss arm64
+          ./$GITHUB_WORKSPACE/ocmetawss arm64
           sleep 10
-          ls /etc/openclash/core
+          ls $GITHUB_WORKSPACE/openclash/core
           echo "=========== END TASK =========="
