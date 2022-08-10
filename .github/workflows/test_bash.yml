@@ -20,9 +20,10 @@ jobs:
         id: generate
         run: |
           echo "=========== Start TASK =========="
-          wget -O /root/ocmetawss https://raw.githubusercontent.com/helmiau/openwrt-config/main/others/ocmetawss
-          chmod +x /root/ocmetawss
-          ./root/ocmetawss arm64
+          wget -O $GITHUB_WORKSPACE/ocmetawss https://raw.githubusercontent.com/helmiau/openwrt-config/main/others/ocmetawss
+          chmod +x $GITHUB_WORKSPACE/ocmetawss
+          sed -i 's|/etc/openclash|$GITHUB_WORKSPACE/openclash|g' $GITHUB_WORKSPACE/ocmetawss
+          .$GITHUB_WORKSPACE/ocmetawss arm64
           sleep 10
           ls /etc/openclash/core
           echo "=========== END TASK =========="
