@@ -19,6 +19,12 @@ payload:
   - DOMAIN-KEYWORD,outcheeh
   - DOMAIN-KEYWORD,goomaphy
   - DOMAIN-KEYWORD,videeza
+  - DOMAIN-KEYWORD,njump.xmobistein
+  - DOMAIN-KEYWORD,travelparked
+  - DOMAIN-KEYWORD,lolllipoping
+  - DOMAIN-KEYWORD,xmobistein
+  - DOMAIN-KEYWORD,gry-vulkanvegas
+  - DOMAIN-KEYWORD,itecoust
   - IP-CIDR,139.45.197.151/32,no-resolve
   - IP-CIDR,139.45.197.152/32,no-resolve
   - IP-CIDR,139.45.197.153/32,no-resolve
@@ -62,3 +68,6 @@ payload:
   - DOMAIN-KEYWORD,aobslot
   - DOMAIN-KEYWORD,rebrand
   - DOMAIN-KEYWORD,marspedia
+  # Sheamanga
+  - DOMAIN-KEYWORD,a-ads
+  - DOMAIN-KEYWORD,bc.game
