@@ -5,8 +5,10 @@ payload:
   - DOMAIN-SUFFIX,trustedcpmrevenue.com
   - DOMAIN,amp-api-edge.apps.apple.com
   - DOMAIN,hidemyass.com
-  - DOMAIN,cdnasu.xyz
-  - DOMAIN,cdnime.xyz
-  - DOMAIN,cdnmeta.xyz
+  - DOMAIN-SUFFIX,cdnasu.xyz
+  - DOMAIN-SUFFIX,cdnime.xyz
+  - DOMAIN-SUFFIX,cdnmeta.xyz
+  - DOMAIN-SUFFIX,kentut.xyz
+  - DOMAIN-SUFFIX,gambar.xyz
   - IP-CIDR,45.12.2.2/24 #kuronime
   - IP-CIDR,185.231.223.254/24 #kuronime
