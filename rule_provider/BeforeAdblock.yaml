@@ -6,5 +6,7 @@ payload:
   - DOMAIN,amp-api-edge.apps.apple.com
   - DOMAIN,hidemyass.com
   - DOMAIN,cdnasu.xyz
+  - DOMAIN,cdnime.xyz
+  - DOMAIN,cdnmeta.xyz
   - IP-CIDR,45.12.2.2/24 #kuronime
   - IP-CIDR,185.231.223.254/24 #kuronime
