@@ -10,5 +10,6 @@ payload:
   - DOMAIN-SUFFIX,cdnmeta.xyz
   - DOMAIN-SUFFIX,kentut.xyz
   - DOMAIN-SUFFIX,gambar.xyz
+  - DOMAIN-SUFFIX,wp.com
   - IP-CIDR,45.12.2.2/24 #kuronime
   - IP-CIDR,185.231.223.254/24 #kuronime
