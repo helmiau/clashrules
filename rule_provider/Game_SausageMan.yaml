@@ -1,0 +1,22 @@
+# https://www.pejuanggsm.my.id/2023/02/daftar-kumpulan-port-game-terbaru.html
+payload:
+  # TCP
+  - DST-PORT,6001
+  - DST-PORT,8013
+  - DST-PORT,9000
+  - DST-PORT,9001
+  - DST-PORT,9002
+  - DST-PORT,9003
+  - DST-PORT,9004
+  - DST-PORT,9005
+  - DST-PORT,9006
+  - DST-PORT,9007
+  - DST-PORT,9008
+  - DST-PORT,9009
+  - DST-PORT,9010
+  
+  # UDP
+  - DST-PORT,8000
+  - DST-PORT,8001
+  - DST-PORT,50233
+  - DST-PORT,58272
