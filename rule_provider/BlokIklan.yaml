@@ -111,3 +111,17 @@ payload:
   - DOMAIN-KEYWORD,phouwims
   #manhwa net
   - DOMAIN-KEYWORD,ber2g8e3keley
+  #d3ward.github.io
+  - DOMAIN-KEYWORD,adtago.s3.amazonaws.com
+  - DOMAIN-KEYWORD,advice-ads.s3.amazonaws.com
+  - DOMAIN-KEYWORD,stats.wp.com
+  - DOMAIN-KEYWORD,notify.bugsnag.com
+  - DOMAIN-KEYWORD,sessions.bugsnag.com
+  - DOMAIN-KEYWORD,api.bugsnag.com
+  - DOMAIN-KEYWORD,app.bugsnag.com
+  - DOMAIN-KEYWORD,browser.sentry-cdn.com
+  - DOMAIN-KEYWORD,widgets.pinterest.com
+  - DOMAIN-KEYWORD,log.byteoversea.com
+  - DOMAIN-KEYWORD,offerwall.yandex.net
+  - DOMAIN-KEYWORD,bdapi-in-ads.realmemobile.com
+  - DOMAIN-KEYWORD,grs.hicloud.com
