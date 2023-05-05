@@ -17,5 +17,6 @@ payload:
   - DOMAIN-SUFFIX,cdngue.xyz
   - DOMAIN,cdn.statically.io
   - DOMAIN-SUFFIX,itachi.my.id
+  - DOMAIN-KEYWORD,nekopoi
   - IP-CIDR,45.12.2.2/24 #kuronime
   - IP-CIDR,185.231.223.254/24 #kuronime
