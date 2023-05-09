@@ -19,5 +19,6 @@ payload:
   - DOMAIN-SUFFIX,itachi.my.id
   - DOMAIN-KEYWORD,nekopoi
   - DOMAIN,cdn.kena-blok.xyz
+  - DOMAIN-KEYWORD,cdnkomikindo.xyz
   - IP-CIDR,45.12.2.2/24 #kuronime
   - IP-CIDR,185.231.223.254/24 #kuronime
