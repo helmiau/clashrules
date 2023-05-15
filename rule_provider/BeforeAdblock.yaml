@@ -20,6 +20,12 @@ payload:
   - DOMAIN-KEYWORD,nekopoi
   - DOMAIN,cdn.kena-blok.xyz
   - DOMAIN-KEYWORD,cdnkomikindo.xyz
+  
+  # Tokopedia
   - DOMAIN,tokopedia.app.link
+  - DOMAIN,tokopedia.link
+
+  # IP-CIRD
   - IP-CIDR,45.12.2.2/24 #kuronime
   - IP-CIDR,185.231.223.254/24 #kuronime
+  
