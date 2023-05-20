@@ -16,8 +16,9 @@ payload:
   - DOMAIN-SUFFIX,vidio.com.edgesuite.net
   
   # Premiere
-  #- DOMAIN-KEYWORD,adcs-
+  - DOMAIN-KEYWORD,adcs-
   #- DOMAIN,adcs-ap.myappsget.com
   #- DOMAIN,adcs-ue.myappsget.com
-  #- DOMAIN,api.youngle.tech
+  - DOMAIN,api.youngle.tech
   - DOMAIN,imasdk.googleapis.com
+  - DOMAIN,soup.wetvinfo.com
