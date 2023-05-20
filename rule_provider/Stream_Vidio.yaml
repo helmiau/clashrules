@@ -4,6 +4,7 @@
 # - https://github.com/boychongzen18/Bug-Host-All-Operator/blob/master/vidio.txt
 # - https://github.com/duckduckgo/tracker-radar/blob/main/domains/FR/vidio.com.edgesuite.net.json
 payload:
+  # Base URL's
   - DOMAIN-SUFFIX,vidio.com
   - DOMAIN-SUFFIX,vidiocdn.com
   - DOMAIN-SUFFIX,vid.id
@@ -13,3 +14,10 @@ payload:
   - DOMAIN-KEYWORD,-vidio.akamaized.net
   - DOMAIN-SUFFIX,vidio.com.edgekey.net
   - DOMAIN-SUFFIX,vidio.com.edgesuite.net
+  
+  # Premiere
+  #- DOMAIN-KEYWORD,adcs-
+  #- DOMAIN,adcs-ap.myappsget.com
+  #- DOMAIN,adcs-ue.myappsget.com
+  #- DOMAIN,api.youngle.tech
+  - DOMAIN,imasdk.googleapis.com
