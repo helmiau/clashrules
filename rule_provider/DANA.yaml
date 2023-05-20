@@ -1,3 +1,4 @@
 payload:
-  - DOMAIN-SUFFIX,link.dana.id
-  - DOMAIN-SUFFIX,danaindonesia.app.link
+  - DOMAIN-SUFFIX,dana.id
+  - DOMAIN,link.dana.id
+  - DOMAIN,danaindonesia.app.link
