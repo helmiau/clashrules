@@ -37,6 +37,8 @@ payload:
   # Shopee SPinjam dan SPayLater
   #- DOMAIN-KEYWORD,shopeekredit
   #- DOMAIN-KEYWORD,cdn.scredit
+  - DOMAIN-KEYWORD,sentry.paylater.scredit
+  - DOMAIN-KEYWORD,spl-h5.cmf.co.id
   
   # Shopee Login Reward
   #- DOMAIN-KEYWORD,games.shopee
