@@ -1,0 +1,23 @@
+payload:
+  # > LD Player Ads
+  - DOMAIN,encdn.ldmnq.com.w.alikunlun.com 
+  - DOMAIN,apien.ldmnq.com 
+  - DOMAIN,advertise.ldplayer.net.a.lahuashanbx.com 
+  - DOMAIN,d19przo9d3f9zk.cloudfront.net 
+  - DOMAIN,dldgmpfyeblzc.cloudfront.net 
+  - DOMAIN,ins-o9iydzqn.ias.tencent-cloud.net 
+  - DOMAIN,appstore.ldmnq.com 
+  - DOMAIN,netease-publish-gdlgphs.w.alikunlun.com 
+  - DOMAIN,d330if318qxsm2.cloudfront.net 
+  - DOMAIN,dn2sifz9m7tkk.cloudfront.net 
+  - DOMAIN,d3p6x1jquzbe0c.cloudfront.net 
+  - DOMAIN,de2pmm85odupd.cloudfront.net 
+  - DOMAIN,p-sgsg00.kxcdn.com 
+  - DOMAIN,adabdapi.ldmnq.com 
+  - DOMAIN,www.google-analytics.com 
+  
+  # IP-CIDR
+  - IP-CIDR,79.133.177.0/24
+  - IP-CIDR,163.181.56.0/24
+  - IP-CIDR,163.181.92.0/24
+  - IP-CIDR,47.74.196.235/32
