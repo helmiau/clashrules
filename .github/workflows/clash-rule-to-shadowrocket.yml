@@ -63,20 +63,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Delete Workflow Runs
-        uses: MajorScruffy/delete-old-workflow-runs@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ophub/delete-releases-workflows@main
         with:
-          repository: ${{ github.repository }}
-          older-than-seconds: 3600
-          what-if: false
-          # created-before: ${{ github.event.inputs.created-before }}T23:55:00Z
-          # status: ${{ github.event.inputs.status }}
-          # workflow: ".github/workflows/main.yml"
-          # older-than-seconds: 3600
-          # created-before: "2021-12-08T16:34:00Z"
-          # actor: test@test.com
-          # branch: main
-          # event: push
-          # event: completed
-          # what-if: true
+          delete_releases: false
+          delete_workflows: true
+          workflows_keep_day: 0
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
