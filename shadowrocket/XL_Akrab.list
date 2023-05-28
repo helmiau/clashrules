@@ -115,6 +115,18 @@ DOMAIN-SUFFIX,teams.cdn.live.net
 DOMAIN-SUFFIX,teams.live.com
 DOMAIN-SUFFIX,teams.microsoft.com
 
+# > Zenius
+DOMAIN-SUFFIX,zenius.net
+
+# > Udemy
+DOMAIN-SUFFIX,udemy.com
+
+# > Sekolah.mu
+DOMAIN-SUFFIX,sekolah.mu
+
+# > Skill Academy
+DOMAIN-SUFFIX,skillacademy.com
+
 # > Campuran
 # - DOMAIN-KEYWORD,zoom.us
 # - DOMAIN-KEYWORD,meet.google.com
