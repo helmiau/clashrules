@@ -56,14 +56,27 @@ jobs:
 
       - name: Update GitHub page data
         if: steps.generate.outputs.status == 'success' && !cancelled()
-        uses: test-room-7/action-update-file@v1.5.0
+        uses: test-room-7/action-update-file@main
         with:
           commit-msg: "Shadowrocket rules updated: ${{ steps.waktu.outputs.waktu }}"
           file-path: "shadowrocket/*.list"
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Delete Workflow Runs
-        uses: GitRML/delete-workflow-runs@main
+        uses: MajorScruffy/delete-old-workflow-runs@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          retain_days: 1
-          keep_minimum_runs: 3
+          repository: ${{ github.repository }}
+          older-than-seconds: 3600
+          what-if: false
+          # created-before: ${{ github.event.inputs.created-before }}T23:55:00Z
+          # status: ${{ github.event.inputs.status }}
+          # workflow: ".github/workflows/main.yml"
+          # older-than-seconds: 3600
+          # created-before: "2021-12-08T16:34:00Z"
+          # actor: test@test.com
+          # branch: main
+          # event: push
+          # event: completed
+          # what-if: true
