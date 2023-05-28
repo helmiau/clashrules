@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: Set timezone to WIB Jakarta
-        uses: szenius/set-timezone@v1.0
+        uses: szenius/set-timezone@master
         with:
           timezoneLinux: "Asia/Jakarta"
           timezoneMacos: "Asia/Jakarta"
@@ -37,7 +37,7 @@ jobs:
       - name: Generate current time
         id: waktu
         run: |
-          echo "::set-output name=waktu::$(date +'%d-%m-%Y %H:%M:%S')"
+          echo "waktu=$(date +'%d-%m-%Y %H:%M:%S')" >> $GITHUB_OUTPUT
 
       - name: Converting files
         id: generate
@@ -52,7 +52,7 @@ jobs:
           #echo "========= LS SHADOWROCKET ========="
           #ls shadowrocket
           #echo "=========== END LS TASKS =========="
-          echo "::set-output name=status::success"
+          echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Update GitHub page data
         if: steps.generate.outputs.status == 'success' && !cancelled()
