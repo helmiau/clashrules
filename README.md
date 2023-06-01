@@ -1,5 +1,17 @@
-## Rule Providers for Clash (OpenWrt, iOS)
+## Rule Providers for Clash (OpenWrt, iOS, Windows, Linux, Android)
 Aplikasi yang digunakan:
+- [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg/releases)
+    
+    aplikasi Clash untuk Windows OS.
+
+- [Clash for Linux](https://github.com/Kr328/clash-tun-for-linux)
+    
+    aplikasi Clash untuk Linux OS.
+    
+- [Clash for Android](https://github.com/Kr328/ClashForAndroid)
+    
+    aplikasi Clash untuk Windows OS.
+
 - [OpenClash for OpenWrt](https://github.com/vernesong/OpenClash)
     
     aplikasi Clash ini sudah jelas untuk OpenWrt.
