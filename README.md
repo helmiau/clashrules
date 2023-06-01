@@ -10,7 +10,7 @@ Aplikasi yang digunakan:
     
 - [Clash for Android](https://github.com/Kr328/ClashForAndroid)
     
-    aplikasi Clash untuk Windows OS.
+    aplikasi Clash untuk Android OS.
 
 - [OpenClash for OpenWrt](https://github.com/vernesong/OpenClash)
     
