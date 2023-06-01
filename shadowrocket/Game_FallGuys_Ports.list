@@ -1,0 +1,49 @@
+
+# TCP/UDP - Steam
+DST-PORT,27015
+DST-PORT,27031
+DST-PORT,27032
+DST-PORT,27033
+DST-PORT,27034
+DST-PORT,27035
+DST-PORT,27036
+
+# TCP/UDP - PC EpicGames
+DST-PORT,8077
+DST-PORT,8177
+DST-PORT,42001
+DOMAIN-SUFFIX,api.epicgames.dev
+DOMAIN-SUFFIX,connect.epicgames.dev
+DOMAIN-SUFFIX,connect.ol.epicgames.com
+DOMAIN-SUFFIX,gateway.fallguys.oncatapult.com
+DOMAIN-SUFFIX,login.fallguys.oncatapult.com
+DOMAIN-SUFFIX,rtcp.on.epicgames.com
+DOMAIN-KEYWORD,fg-matchmaking-public-service-live-a
+DOMAIN-KEYWORD,social-overlay-launchdarkly-api-prod
+DOMAIN-KEYWORD,social-overlay-token-exchange-api-prod
+# catalog-public-service-prod06.ol.epicgames.co
+# fallguys-assets.gamefuel.info
+# 45.35.35.218:8177
+
+# TCP/UDP - Playstation 4
+DST-PORT,3074
+DST-PORT,3478
+DST-PORT,3479
+DST-PORT,3480
+
+# TCP/UDP - Xbox One, Series X
+DST-PORT,88
+DST-PORT,500
+DST-PORT,3544
+DST-PORT,4500
+
+# TCP - Switch
+DST-PORT,6667
+DST-PORT,12400
+DST-PORT,28910
+DST-PORT,29900
+DST-PORT,29901
+DST-PORT,29920
+
+# UDP - Switch
+DST-PORT,65535

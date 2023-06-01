@@ -1,0 +1,5 @@
+# https://github.com/rfxcll/open_meta/blob/main/Load-Balance.yaml
+
+# TCP/UDP
+DST-PORT,8013
+DST-PORT,8888
