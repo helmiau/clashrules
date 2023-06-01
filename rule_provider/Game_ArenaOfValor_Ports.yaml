@@ -1,7 +1,10 @@
 # https://nanangmrk.com/daftar-port-game-terbaru-2021/
 # https://www.pejuanggsm.my.id/2023/02/daftar-kumpulan-port-game-terbaru.html
+
 payload:
   # TCP
+  - DST-PORT,8013
+  - DST-PORT,10000
   - DST-PORT,10001
   - DST-PORT,10002
   - DST-PORT,10003
@@ -96,8 +99,18 @@ payload:
   - DST-PORT,10092
   - DST-PORT,10093
   - DST-PORT,10094
+  - DST-PORT,18082
+  - DST-PORT,20000
+  - DST-PORT,20001
+  - DST-PORT,20166
+  - DST-PORT,31003
+  - DST-PORT,33445
+  - DST-PORT,50000
 
   # UDP
+  - DST-PORT,5008
+  - DST-PORT,8011
+  - DST-PORT,8700
   - DST-PORT,10095
   - DST-PORT,10096
   - DST-PORT,10097
@@ -205,6 +218,8 @@ payload:
   - DST-PORT,10199
   - DST-PORT,10200
   - DST-PORT,10201
+  - DST-PORT,14050
+  - DST-PORT,14080
   - DST-PORT,17000
   - DST-PORT,17001
   - DST-PORT,17002
