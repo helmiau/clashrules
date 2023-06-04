@@ -1,4 +1,18 @@
 payload:
+  # Recommend to place before adblock rules
   - DOMAIN-SUFFIX,dana.id
-  - DOMAIN,link.dana.id
   - DOMAIN,danaindonesia.app.link
+
+  - DOMAIN,events.split.io
+  - DOMAIN,sdk.split.io
+  - DOMAIN,auth.split.io
+  - DOMAIN,cdn.branch.io
+  - DOMAIN,streaming.split.io
+  - DOMAIN,api2.branch.io
+
+  - DOMAIN-SUFFIX,aliapp.org
+  
+  - DOMAIN-KEYWORD,-ac.alipay.com
+  - DOMAIN-KEYWORD,-sea.alipay.com
+  - DOMAIN-KEYWORD,gw-dana.ebuckler
+  - DOMAIN-KEYWORD,dana.threatcast
