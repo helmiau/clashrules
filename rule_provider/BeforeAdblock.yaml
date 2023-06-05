@@ -20,6 +20,7 @@ payload:
   - DOMAIN-KEYWORD,nekopoi
   - DOMAIN,cdn.kena-blok.xyz
   - DOMAIN-KEYWORD,cdnkomikindo.xyz
+  - DOMAIN-SUFFIX,nhentai.net
   
   # Tokopedia
   - DOMAIN,tokopedia.app.link
