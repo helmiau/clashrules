@@ -1,0 +1,71 @@
+# https://portforward.com/efootball-pes-2020/
+# https://portforward.com/efootball-pes-2021/
+# https://portforward.com/efootball/
+payload:
+  # TCP - eFootball 2020 & 2021
+  # PS4
+  - DST-PORT,1935
+  - DST-PORT,3478
+  - DST-PORT,3479
+  - DST-PORT,5730
+  # STEAM
+  - DST-PORT,27015
+  - DST-PORT,27016
+  - DST-PORT,27017
+  - DST-PORT,27018
+  - DST-PORT,27019
+  - DST-PORT,27020
+  - DST-PORT,27021
+  - DST-PORT,27022
+  - DST-PORT,27023
+  - DST-PORT,27024
+  - DST-PORT,27025
+  - DST-PORT,27026
+  - DST-PORT,27027
+  - DST-PORT,27028
+  - DST-PORT,27029
+  - DST-PORT,27030
+  - DST-PORT,27036
+  - DST-PORT,27037
+  # Xbox
+  - DST-PORT,3074
+
+  # UDP - eFootball 2020 & 2021
+  # PS4
+  - DST-PORT,5731
+  - DST-PORT,5739
+  # STEAM
+  - DST-PORT,4380
+  - DST-PORT,27000
+  - DST-PORT,27001
+  - DST-PORT,27002
+  - DST-PORT,27003
+  - DST-PORT,27004
+  - DST-PORT,27005
+  - DST-PORT,27006
+  - DST-PORT,27007
+  - DST-PORT,27008
+  - DST-PORT,27009
+  - DST-PORT,27010
+  - DST-PORT,27011
+  - DST-PORT,27012
+  - DST-PORT,27013
+  - DST-PORT,27014
+  - DST-PORT,27031
+  # Xbox
+  - DST-PORT,88
+  - DST-PORT,500
+  - DST-PORT,3544
+  - DST-PORT,4500
+  
+#########################
+  # TCP - eFootball
+  # PS4 & PS5
+  - DST-PORT,3480
+  
+  # UDP - eFootball
+  # STEAM
+  - DST-PORT,27032
+  - DST-PORT,27033
+  - DST-PORT,27034
+  - DST-PORT,27035
