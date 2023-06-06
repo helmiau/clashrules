@@ -1,0 +1,33 @@
+
+# > GOOGLE MEET, CLASSROOM, HANGOUTS, MAPS
+DOMAIN-KEYWORD,meet.google.com
+DOMAIN-SUFFIX,meetings.googleapis.com
+DOMAIN-SUFFIX,classroom.google.com
+DOMAIN-SUFFIX,hangouts.googleapis.com
+# MAPS
+DOMAIN-SUFFIX,userlocation.googleapis.com
+DOMAIN-SUFFIX,stun.l.google.com
+DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com
+DOMAIN-SUFFIX,mtalk.google.com
+DOMAIN-SUFFIX,mobilemaps.googleapis.com
+DOMAIN-SUFFIX,mobilemaps-pa-gz.googleapis.com
+DOMAIN-SUFFIX,clients4.google.com
+DOMAIN-SUFFIX,android.googleapis.com
+DOMAIN-SUFFIX,safebrowsing.googleapis.com
+DOMAIN-SUFFIX,lh3.googleusercontent.com
+DOMAIN-SUFFIX,lh5.googleusercontent.com
+DOMAIN-SUFFIX,apis.google.com
+DOMAIN-SUFFIX,peoplestack-pa.googleapis.com
+DOMAIN-SUFFIX,gz0.googleusercontent.com
+DOMAIN-SUFFIX,geoar.googleapis.com
+DOMAIN-SUFFIX,streetviewpixels-pa.googleapis.com
+DOMAIN-SUFFIX,maps.gstatic.com
+DOMAIN-SUFFIX,maps.google.com
+DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com
+# CLASSROOM
+DOMAIN-SUFFIX,dns.google
+DOMAIN-SUFFIX,clients3.google.com
+DOMAIN-SUFFIX,notifications-pa.googleapis.com
+# PORTS
+DST-PORT,19302
+DST-PORT,19305

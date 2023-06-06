@@ -1,0 +1,4 @@
+
+# > Cloudflare ZeroTrust VPN Remote
+DOMAIN-SUFFIX,argotunnel.com
+# - DST-PORT,7844
