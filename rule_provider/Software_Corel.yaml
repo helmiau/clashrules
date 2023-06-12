@@ -1,0 +1,9 @@
+payload:
+  # > Block Corel Software online activation
+  - DOMAIN,mc.corel.com
+  - DOMAIN,apps.corel.com
+  - DOMAIN,origin-mc.corel.com
+  - DOMAIN,iws.corel.com
+  - DOMAIN,compute-1.amazonaws.com
+  - DOMAIN,ipm.corel.com
+  - DOMAIN,dev1.ipm.corel.public.corel.net
