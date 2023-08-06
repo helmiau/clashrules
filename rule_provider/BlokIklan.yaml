@@ -130,3 +130,8 @@ payload:
   - DOMAIN-KEYWORD,adtech.yahooinc.com
   - DOMAIN-KEYWORD,bdapi-ads.realmemobile.com
   - DOMAIN-KEYWORD,bdapi-in-ads.realmemobile.com
+  - DOMAIN-KEYWORD,udc.yahoo.com
+  - DOMAIN-KEYWORD,udcm.yahoo.com
+  - DOMAIN-KEYWORD,log.fc.yahoo.com
+  - DOMAIN-KEYWORD,ads-api.tiktok.com
+  - DOMAIN-KEYWORD,business-api.tiktok.com
