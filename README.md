@@ -14,7 +14,7 @@ Aplikasi yang digunakan:
    
 - [Surfboard for Android](https://getsurfboard.com)
     
-    aplikasi Clash client untuk Android OS.
+    aplikasi seperti Shadowrocket (menggunakan config Shadowrocket) untuk Android OS.
     
 - [OpenClash for OpenWrt](https://github.com/vernesong/OpenClash)
     
