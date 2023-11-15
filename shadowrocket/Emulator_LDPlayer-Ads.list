@@ -14,7 +14,9 @@ DOMAIN,d3p6x1jquzbe0c.cloudfront.net
 DOMAIN,de2pmm85odupd.cloudfront.net 
 DOMAIN,p-sgsg00.kxcdn.com 
 DOMAIN,adabdapi.ldmnq.com 
-DOMAIN,www.google-analytics.com 
+DOMAIN,www.google-analytics.com
+DOMAIN,advertise.ldplayer.net
+DOMAIN,storeen.ldmnq.com
 
 # IP-CIDR
 IP-CIDR,79.133.177.0/24

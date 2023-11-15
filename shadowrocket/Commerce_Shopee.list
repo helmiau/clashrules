@@ -1,54 +1,13 @@
 
-# Shopee
-#- DOMAIN-KEYWORD,shopee
-
-# Shopee mall, rincian pesanan
-#- DOMAIN-KEYWORD,mall.shopee
-
-# Rule screenshot bukti barang sampai
-#- DOMAIN-KEYWORD,electronicproof.ssc.shopee
-
-# Shopee LIVE
-#- DOMAIN-KEYWORD,livestream.shopee
-#- DOMAIN-KEYWORD,live.shopee
-#- DOMAIN-KEYWORD,livetech.shopee
-#- DOMAIN-KEYWORD,chatroom-live.shopee
-#- IP-CIDR,202.179.138.114
-#- IP-CIDR,128.1.61.66
-#- IP-CIDR,150.109.91.8
-#- IP-CIDR,36.66.3.172
-#- IP-CIDR,138.113.116.5
-#- IP-CIDR,36.66.223.235
-#- IP-CIDR,150.109.91.7
-#- IP-CIDR,117.103.116.29
-#- DST-PORT,61947
-#- DST-PORT,64355
-#- DST-PORT,61948
-#- DST-PORT,61947
-#- DST-PORT,61947
-#- DST-PORT,61947
-#- DST-PORT,61947
-#- DST-PORT,61947
-
 # ShopeePay
 DOMAIN-KEYWORD,wallet.airpay
 DOMAIN-KEYWORD,gw.airpay
 
 # Shopee SPinjam dan SPayLater
-#- DOMAIN-KEYWORD,shopeekredit
-#- DOMAIN-KEYWORD,cdn.scredit
+DOMAIN-KEYWORD,shopeekredit
+DOMAIN-KEYWORD,cdn.scredit
 DOMAIN-KEYWORD,sentry.paylater.scredit
 DOMAIN-KEYWORD,spl-h5.cmf.co.id
-
-# Shopee Login Reward
-#- DOMAIN-KEYWORD,games.shopee
-#- DOMAIN-KEYWORD,play.shopee
-
-# ShopeeFood
-#- DOMAIN-KEYWORD,foody.shopee
-
-# Rule nilai produk
-#- DOMAIN-KEYWORD,rating.shopee
 
 # Shopee login, logout and checkout
 DOMAIN-KEYWORD,api.shopee
@@ -56,13 +15,5 @@ DOMAIN-KEYWORD,c-api-bit.shopeemobile
 # - DOMAIN-KEYWORD,cf.shopee
 DOMAIN-KEYWORD,frd.shopee
 
-#- DOMAIN-SUFFIX,shopee.com
-#- DOMAIN-SUFFIX,shopee.com.br
-#- DOMAIN-SUFFIX,shopee.com.my
-#- DOMAIN-SUFFIX,shopee.ph
-#- DOMAIN-SUFFIX,shopee.sg
-#- DOMAIN-SUFFIX,shopee.tw
-#- DOMAIN-SUFFIX,shopee.vn
-#- DOMAIN-SUFFIX,shopeemobile.com
 DOMAIN-SUFFIX,shp.ee
 DOMAIN-SUFFIX,app.appsflyer.com

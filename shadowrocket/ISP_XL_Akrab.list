@@ -35,97 +35,78 @@ DST-PORT,5222
 DST-PORT,38211
 
 # > MICROSOFT
-DOMAIN-SUFFIX,smartscreen-prod.microsoft.com
-DOMAIN-SUFFIX,self.events.data.microsoft.com
-DOMAIN-SUFFIX,nav.smartscreen.microsoft.com
-DOMAIN-SUFFIX,edge.microsoft.com
+#- DOMAIN-SUFFIX,smartscreen-prod.microsoft.com
+#- DOMAIN-SUFFIX,self.events.data.microsoft.com
+#- DOMAIN-SUFFIX,nav.smartscreen.microsoft.com
+#- DOMAIN-SUFFIX,edge.microsoft.com
 
 # > RUANGGURU
-DOMAIN-SUFFIX,ruangguru.com
-DOMAIN-SUFFIX,belajar.ruangguru.com
-DOMAIN-SUFFIX,midtrans.com
-DOMAIN-SUFFIX,api.midtrans.com
+#- DOMAIN-SUFFIX,ruangguru.com
+#- DOMAIN-SUFFIX,belajar.ruangguru.com
+#- DOMAIN-SUFFIX,midtrans.com
+#- DOMAIN-SUFFIX,api.midtrans.com
 
 # > ZOOM
-DOMAIN-SUFFIX,zoom.us
-DOMAIN-SUFFIX,google.zoom.us
-DOMAIN-SUFFIX,us02st1.zoom.us
-DOMAIN-SUFFIX,us03st1.zoom.us
-DOMAIN-SUFFIX,us04st1.zoom.us
-DOMAIN-SUFFIX,us02st2.zoom.us
-DOMAIN-SUFFIX,us03st2.zoom.us
-DOMAIN-SUFFIX,us04st2.zoom.us
-DOMAIN-SUFFIX,us02st3.zoom.us
-DOMAIN-SUFFIX,us03st3.zoom.us
-DOMAIN-SUFFIX,us04st3.zoom.us
-DOMAIN-SUFFIX,us02web.zoom.us
-DOMAIN-SUFFIX,zoom.ada.support
-DOMAIN-SUFFIX,st1.zoom.us
-DOMAIN-SUFFIX,us02zpns.zoom.us
-DOMAIN-SUFFIX,us04xmppapi.zoom.us
-DOMAIN-SUFFIX,us04st1.zoom.us
-DOMAIN-SUFFIX,us04xmpp1.zoom.us
-DOMAIN-SUFFIX,xmpp013.zoom.us
-DOMAIN-SUFFIX,logfiles.zoom.us
-DOMAIN-SUFFIX,cdn.zoom.us
-DOMAIN-SUFFIX,zoom-general.s3.amazonaws.com
-DOMAIN-SUFFIX,zoomca193-123-14-89mmr.cloud.zoom.us
-DOMAIN-SUFFIX,zoomca193-123-1-56zc.cloud.zoom.us
-DST-PORT,8801
-DST-PORT,8802
-DST-PORT,3478
-DST-PORT,3479
+#- DOMAIN-SUFFIX,zoom.us
+#- DOMAIN-SUFFIX,zoom.ada.support
+#- DOMAIN-SUFFIX,zoom-general.s3.amazonaws.com
+#- DOMAIN-SUFFIX,zoomca193-123-14-89mmr.cloud.zoom.us
+#- DOMAIN-SUFFIX,zoomca193-123-1-56zc.cloud.zoom.us
+#- DST-PORT,8801
+#- DST-PORT,8802
+#- DST-PORT,3478
+#- DST-PORT,3479
  
 # > AREA KHUSUS XL AKRAB
 # > GOOGLE MEET, CLASSROOM, HANGOUTS, MAPS
-DOMAIN-SUFFIX,meetings.googleapis.com
-DOMAIN-SUFFIX,classroom.google.com
-DOMAIN-SUFFIX,hangouts.googleapis.com
+#- DOMAIN-SUFFIX,meetings.googleapis.com
+#- DOMAIN-SUFFIX,classroom.google.com
+#- DOMAIN-SUFFIX,hangouts.googleapis.com
 # MAPS
-DOMAIN-SUFFIX,userlocation.googleapis.com
-DOMAIN-SUFFIX,stun.l.google.com
-DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com
-DOMAIN-SUFFIX,mtalk.google.com
-DOMAIN-SUFFIX,mobilemaps.googleapis.com
-DOMAIN-SUFFIX,mobilemaps-pa-gz.googleapis.com
-DOMAIN-SUFFIX,clients4.google.com
-DOMAIN-SUFFIX,android.googleapis.com
-DOMAIN-SUFFIX,safebrowsing.googleapis.com
-DOMAIN-SUFFIX,lh3.googleusercontent.com
-DOMAIN-SUFFIX,lh5.googleusercontent.com
-DOMAIN-SUFFIX,apis.google.com
-DOMAIN-SUFFIX,peoplestack-pa.googleapis.com
-DOMAIN-SUFFIX,gz0.googleusercontent.com
-DOMAIN-SUFFIX,geoar.googleapis.com
-DOMAIN-SUFFIX,streetviewpixels-pa.googleapis.com
-DOMAIN-SUFFIX,maps.gstatic.com
-DOMAIN-SUFFIX,maps.google.com
-DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com
+#- DOMAIN-SUFFIX,userlocation.googleapis.com
+#- DOMAIN-SUFFIX,stun.l.google.com
+#- DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com
+#- DOMAIN-SUFFIX,mtalk.google.com
+#- DOMAIN-SUFFIX,mobilemaps.googleapis.com
+#- DOMAIN-SUFFIX,mobilemaps-pa-gz.googleapis.com
+#- DOMAIN-SUFFIX,clients4.google.com
+#- DOMAIN-SUFFIX,android.googleapis.com
+#- DOMAIN-SUFFIX,safebrowsing.googleapis.com
+#- DOMAIN-SUFFIX,lh3.googleusercontent.com
+#- DOMAIN-SUFFIX,lh5.googleusercontent.com
+#- DOMAIN-SUFFIX,apis.google.com
+#- DOMAIN-SUFFIX,peoplestack-pa.googleapis.com
+#- DOMAIN-SUFFIX,gz0.googleusercontent.com
+#- DOMAIN-SUFFIX,geoar.googleapis.com
+#- DOMAIN-SUFFIX,streetviewpixels-pa.googleapis.com
+#- DOMAIN-SUFFIX,maps.gstatic.com
+#- DOMAIN-SUFFIX,maps.google.com
+#- DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com
 # CLASSROOM
-DOMAIN-SUFFIX,dns.google
-DOMAIN-SUFFIX,clients3.google.com
-DOMAIN-SUFFIX,notifications-pa.googleapis.com
+#- DOMAIN-SUFFIX,dns.google
+#- DOMAIN-SUFFIX,clients3.google.com
+#- DOMAIN-SUFFIX,notifications-pa.googleapis.com
 # PORTS
-DST-PORT,19302
-DST-PORT,19305
+#- DST-PORT,19302
+#- DST-PORT,19305
 
 # > Microsoft Teams
-DOMAIN,teams.events.data.microsoft.com
-DOMAIN-SUFFIX,teams.cdn.live.net
-DOMAIN-SUFFIX,teams.live.com
-DOMAIN-SUFFIX,teams.microsoft.com
+#- DOMAIN,teams.events.data.microsoft.com
+#- DOMAIN-SUFFIX,teams.cdn.live.net
+#- DOMAIN-SUFFIX,teams.live.com
+#- DOMAIN-SUFFIX,teams.microsoft.com
 
 # > Zenius
-DOMAIN-SUFFIX,zenius.net
+#- DOMAIN-SUFFIX,zenius.net
 
 # > Udemy
-DOMAIN-SUFFIX,udemy.com
+#- DOMAIN-SUFFIX,udemy.com
 
 # > Sekolah.mu
-DOMAIN-SUFFIX,sekolah.mu
+#- DOMAIN-SUFFIX,sekolah.mu
 
 # > Skill Academy
-DOMAIN-SUFFIX,skillacademy.com
+#- DOMAIN-SUFFIX,skillacademy.com
 
 # > Campuran
 # - DOMAIN-KEYWORD,zoom.us

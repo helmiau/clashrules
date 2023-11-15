@@ -2,7 +2,24 @@
 # https://portforward.com/efootball-pes-2021/
 # https://portforward.com/efootball/
 
-# TCP - eFootball 2020 & 2021
+# DOMAIN PES Mobile 2023
+DOMAIN,pesam.stun.service.konami.net
+DOMAIN,pes22-game.cs.konami.net
+DOMAIN-SUFFIX,bc.googleusercontent.com
+# TCP PES Mobile 2023
+DST-PORT,5521
+# UDP PES Mobile 2023
+DST-PORT,30064
+DST-PORT,30237
+DST-PORT,30293
+DST-PORT,30579
+DST-PORT,30847
+DST-PORT,30861
+DST-PORT,31725
+DST-PORT,31874
+DST-PORT,32429
+DST-PORT,32533
+# TCP - eFootball PES 2020 & 2021
 # PS4
 DST-PORT,1935
 DST-PORT,3478
@@ -30,7 +47,7 @@ DST-PORT,27037
 # Xbox
 DST-PORT,3074
 
-# UDP - eFootball 2020 & 2021
+# UDP - eFootball PES 2020 & 2021
 # PS4
 DST-PORT,5731
 DST-PORT,5739
@@ -59,11 +76,11 @@ DST-PORT,3544
 DST-PORT,4500
 
 #########################
-# TCP - eFootball
+# TCP - eFootball PES
 # PS4 & PS5
 DST-PORT,3480
 
-# UDP - eFootball
+# UDP - eFootball PES
 # STEAM
 DST-PORT,27032
 DST-PORT,27033
