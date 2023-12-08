@@ -1,0 +1,15 @@
+# Src: https://t.me/trick_ngirit/3021354/3076217
+
+payload:
+  # Ports
+  - DST-PORT,5223
+  - DST-PORT,2197
+  
+  # IP CIDR
+  - DST-PORT,5056
+  - DST-PORT,5057
+  - IP-CIDR,17.249.0.0/16
+  - IP-CIDR,17.252.0.0/16
+  - IP-CIDR,17.57.144.0/22
+  - IP-CIDR,17.188.128.0/18
+  - IP-CIDR,17.188.20.0/23
