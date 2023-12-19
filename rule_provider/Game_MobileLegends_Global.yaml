@@ -1,0 +1,8 @@
+payload:
+  # Patch In Game MLBB
+  - DOMAIN,akmcdn.ml.youngjoygame.com
+  - DOMAIN,akmpicture.youngjoygame.com
+  
+  # MLBB Stream
+  - DOMAIN,akmcdn.ml.youngjoygame.com
+  - DOMAIN,akmpicture.youngjoygame.com
