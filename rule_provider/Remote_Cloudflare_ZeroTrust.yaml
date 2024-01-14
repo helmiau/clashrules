@@ -1,4 +1,5 @@
 payload:
   # > Cloudflare ZeroTrust VPN Remote
-  - DOMAIN-SUFFIX,argotunnel.com
-  # - DST-PORT,7844
+  - DOMAIN,update.argotunnel.com
+  - DOMAIN-SUFFIX,cftunnel.com
+  - DST-PORT,7844
