@@ -1,5 +1,12 @@
 payload:
-  # > Cloudflare ZeroTrust VPN Remote
+  # > Cloudflare ZeroTrust VPN Remote - IMPORTANT LISTS
   - DOMAIN,update.argotunnel.com
-  - DOMAIN-SUFFIX,cftunnel.com
   - DST-PORT,7844
+  
+  # > Cloudflare ZeroTrust VPN Remote - OPTIONAL LISTS
+  - DOMAIN,cftunnel.com
+  - DOMAIN,h2.cftunnel.com
+  - DOMAIN,quic.cftunnel.com
+  - DOMAIN-SUFFIX,cloudflareaccess.com
+  - DOMAIN,pqtunnels.cloudflareresearch.com
+  
