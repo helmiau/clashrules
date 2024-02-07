@@ -1,0 +1,7 @@
+# Sources:
+# - https://github.com/rfxcll/v2ray-rules-dat/commit/28bfcaa536f543358d9d4058a444b736d8ee1812
+payload:
+  # Base URL's
+  - DOMAIN-SUFFIX,rctiplus.com
+  - DOMAIN-SUFFIX,rctiplus.id
+  - DOMAIN-SUFFIX,rcti.plus
