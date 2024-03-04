@@ -1,0 +1,4 @@
+# Apple iOS Notification: https://support.apple.com/en-us/HT202944
+payload:
+  - DST-PORT,2197
+  - DST-PORT,5223

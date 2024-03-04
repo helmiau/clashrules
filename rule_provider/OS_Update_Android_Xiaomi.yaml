@@ -1,0 +1,20 @@
+# https://github.com/CxZMoE/system_update_blocker/blob/master/system/etc/hosts
+payload:
+  # block miui updates
+  - DOMAIN-KEYWORD,bigota.d.miui.com
+  - DOMAIN-KEYWORD,update.miui.com
+  - DOMAIN-KEYWORD,update.intl.miui.com
+  - DOMAIN-KEYWORD,tracking.india.miui.com
+  - DOMAIN-KEYWORD,api.setting.intl.miui.com
+  
+  # block system apps updates
+  - DOMAIN-KEYWORD,f2.market.xiaomi.com
+  - DOMAIN-KEYWORD,global.market.xiaomi.com
+  - DOMAIN-KEYWORD,file.market.xiaomi.com
+  - DOMAIN-KEYWORD,sdkconfig.ad.intl.xiaomi.com
+  
+  # block wallpaper carousel updates
+  - DOMAIN-KEYWORD,x-in.ls.glanceapis.com
+  
+  # block poco launcher updates
+  - DOMAIN-KEYWORD,api.accelerator.intl.miui.com

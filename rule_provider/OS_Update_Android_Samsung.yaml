@@ -1,0 +1,28 @@
+# https://forum.samygo.tv/viewtopic.php?p=110316&sid=9f36a4f26fa101111c6440ba1f0494f7#p110316
+# https://phyks.me/2017/12/stop-networking-dear-samsung-tv.html
+payload:
+  # samsung fw update server
+  - DOMAIN-KEYWORD,msecnd.net   
+  - DOMAIN-KEYWORD,samsungotn.net
+  - DOMAIN-KEYWORD,otn.samsungcloudcdn.com
+  - DOMAIN-KEYWORD,samsungcloudsolution.net
+  - DOMAIN-KEYWORD,otn-prd-proxy.cloudapp.net
+  - DOMAIN-KEYWORD,az28248.vo.msecnd.net
+  - DOMAIN-KEYWORD,az43064.vo.msecnd.net
+  - DOMAIN-KEYWORD,osb-v2.samsungqbe.com
+  
+  # samsung apps related server, delete root widget
+  - DOMAIN-KEYWORD,osb-apps.samsungqbe.com
+  
+  # Samsung server (firmware)???
+  - DOMAIN-KEYWORD,cdn.samsungcloudsolution.com
+  - DOMAIN-KEYWORD,lcprd1.samsungcloudsolution.net # There is more similar. I will block it #(forced-entry)
+  - DOMAIN-KEYWORD,gpm.samsungqbe.com # NFI but I blocked it
+  - DOMAIN-KEYWORD,notice.samsungcloudsolution.com # some  notice from samsung
+  - DOMAIN-KEYWORD,osb-apps-v2.samsungqbe.com # some apps server. in case you can't install apps just whitelist this entry.
+  - DOMAIN-KEYWORD,osb-auth-eusvc-v2.samsungqbe.com # another shit for install apps, in you can't install whitelist this one too.
+  - DOMAIN-KEYWORD,samsungiotcloud.com # NFI, but it looks to be blocked also, just in case. (i think is SmarThings related)
+  - DOMAIN-KEYWORD,img-resize-cdn-prod.samsungnyc.com # it blocks pictures in smarthub apps. NOT necessary to block 
+  - DOMAIN-KEYWORD,gld.push.samsungosp.com # NFI. let's block it.
+  - DOMAIN-KEYWORD,ocfconnect-shard-eu02-euwest1.samsungiotcloud.com # some EU Samsung server for spying that's need to be blocked. To be continued......
+  - DOMAIN-KEYWORD,config.samsungads.com # ads related url 
