@@ -22,6 +22,7 @@ payload:
   - DOMAIN-KEYWORD,cdnkomikindo.xyz
   - DOMAIN-SUFFIX,nhentai.net
   - DOMAIN-KEYWORD,revanced
+  - DOMAIN-SUFFIX,dlupload.com
   
   # Tokopedia
   - DOMAIN,tokopedia.app.link
