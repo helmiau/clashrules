@@ -23,6 +23,7 @@ payload:
   - DOMAIN-SUFFIX,nhentai.net
   - DOMAIN-KEYWORD,revanced
   - DOMAIN-SUFFIX,dlupload.com
+  - DOMAIN-SUFFIX,pixeldrain.com
   
   # Tokopedia
   - DOMAIN,tokopedia.app.link
