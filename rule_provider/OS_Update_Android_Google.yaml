@@ -1,0 +1,5 @@
+# Block PlayStore and Generic Android OS Update
+payload:
+  # Block PlayStore Update
+  - DOMAIN-SUFFIX,gvt1.com
+  - DOMAIN-SUFFIX,gvt2.com
