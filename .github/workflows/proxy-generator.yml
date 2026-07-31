@@ -2,8 +2,8 @@ name: Proxy Generator
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Every day at 00:00 UTC
-  workflow_dispatch:  # Manual trigger
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -11,7 +11,6 @@ permissions:
 jobs:
   generate-proxies:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -23,7 +22,7 @@ jobs:
 
       - name: Checkout mheidari98-proxy
         run: |
-          git clone --depth 1 https://github.com/mheidari98/.proxy.git elsubs/mheidari98-proxy/.proxy-main
+          git clone --depth 1 https://github.com/mheidari98/.proxy elsubs/mheidari98-proxy/.proxy-main
           ls -la elsubs/mheidari98-proxy/.proxy-main/nodes.md
 
       - name: Install sing-box
