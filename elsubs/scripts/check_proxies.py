@@ -23,14 +23,17 @@ except ImportError:
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-PROXY_MAIN_DIR = os.path.dirname(__file__)  # elsubs/scripts -> elsubs
-NODES_FILE = os.path.join(PROXY_MAIN_DIR, 'mheidari98-proxy', '.proxy-main', 'nodes.md')
+# Path setup: elsubs/scripts/check_proxies.py -> elsubs/
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ELS_DIR = os.path.dirname(SCRIPT_DIR)
+NODES_FILE = os.path.join(ELS_DIR, 'mheidari98-proxy', '.proxy-main', 'nodes.md')
+
 OUTPUT_FILES = {
-    'all': os.path.join(PROXY_MAIN_DIR, 'all'),
-    'ss': os.path.join(PROXY_MAIN_DIR, 'ss'),
-    'vmess': os.path.join(PROXY_MAIN_DIR, 'vmess'),
-    'vless': os.path.join(PROXY_MAIN_DIR, 'vless'),
-    'trojan': os.path.join(PROXY_MAIN_DIR, 'trojan'),
+    'all': os.path.join(ELS_DIR, 'all'),
+    'ss': os.path.join(ELS_DIR, 'ss'),
+    'vmess': os.path.join(ELS_DIR, 'vmess'),
+    'vless': os.path.join(ELS_DIR, 'vless'),
+    'trojan': os.path.join(ELS_DIR, 'trojan'),
 }
 
 def check_url(url, timeout=3, retries=3):
