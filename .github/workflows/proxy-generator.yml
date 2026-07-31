@@ -21,6 +21,11 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Checkout mheidari98-proxy
+        run: |
+          git clone --depth 1 https://github.com/mheidari98/.proxy.git elsubs/mheidari98-proxy/.proxy-main
+          ls -la elsubs/mheidari98-proxy/.proxy-main/nodes.md
+
       - name: Install sing-box
         run: |
           curl -fsSL https://sing-box.app/install.sh | bash -s

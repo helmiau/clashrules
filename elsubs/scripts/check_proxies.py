@@ -34,7 +34,16 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Path setup: elsubs/scripts/check_proxies.py -> elsubs/
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ELS_DIR = os.path.dirname(SCRIPT_DIR)
-NODES_FILE = os.path.join(ELS_DIR, 'mheidari98-proxy', '.proxy-main', 'nodes.md')
+
+# Support both local (with submodule) and CI (cloned manually)
+PROXY_MAIN_DIR = os.path.join(ELS_DIR, 'mheidari98-proxy', '.proxy-main')
+NODES_FILE = os.path.join(PROXY_MAIN_DIR, 'nodes.md')
+
+# Fallback: if nodes.md not found, try parent dir (for CI without submodule)
+if not os.path.exists(NODES_FILE):
+    # In CI, mheidari98-proxy is cloned directly into elsubs/
+    PROXY_MAIN_DIR = os.path.join(ELS_DIR, '.proxy-main')
+    NODES_FILE = os.path.join(PROXY_MAIN_DIR, 'nodes.md')
 
 OUTPUT_FILES = {
     'all': os.path.join(ELS_DIR, 'all'),
