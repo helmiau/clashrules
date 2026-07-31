@@ -23,7 +23,7 @@ jobs:
 
       - name: Install sing-box
         run: |
-          bash <(curl -fsSL https://sing-box.app/install.sh)
+          curl -fsSL https://sing-box.app/install.sh | bash -s -- -x
           sing-box version
 
       - name: Install proxyUtil

@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 """
-Concurrent proxy tester via sing-box.
-Share-link → temp config → dial test → keep alive only.
+Proxy tester using sing-box Clash API.
+- Start sing-box once with all proxies in urltest group
+- Query delay per proxy via /proxies/{tag}/delay endpoint
+- Much faster than spawning sing-box per proxy
 """
 
-from __future__ import annotations
-
-import base64
 import json
 import logging
 import os
-import socket
 import subprocess
 import tempfile
 import time
@@ -22,19 +20,9 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 
 SINGBOX = os.environ.get("SINGBOX_BIN", "sing-box")
 TEST_URL = os.environ.get("PROXY_TEST_URL", "https://www.gstatic.com/generate_204")
-TEST_TIMEOUT = int(os.environ.get("PROXY_TEST_TIMEOUT", "8"))
+TEST_TIMEOUT = int(os.environ.get("PROXY_TEST_TIMEOUT", "8000"))  # ms
 MAX_WORKERS = int(os.environ.get("PROXY_TEST_WORKERS", "20"))
-
-
-def _b64decode(data: str) -> bytes:
-    pad = "=" * (-len(data) % 4)
-    return base64.urlsafe_b64decode(data + pad)
-
-
-def _free_port() -> int:
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(("127.0.0.1", 0))
-        return s.getsockname()[1]
+CLASH_API_PORT = int(os.environ.get("CLASH_API_PORT", "9090"))
 
 
 def share_to_outbound(link: str) -> dict[str, Any] | None:
@@ -56,13 +44,15 @@ def share_to_outbound(link: str) -> dict[str, Any] | None:
     return None
 
 
+def _b64decode(data: str) -> bytes:
+    pad = "=" * (-len(data) % 4)
+    return base64.urlsafe_b64decode(data + pad)
+
+
 def _ss_to_outbound(link: str) -> dict[str, Any] | None:
-    # ss://BASE64@host:port#tag  OR  ss://method:pass@host:port#tag  OR  ss://BASE64#tag
     raw = link[5:]
-    tag = "ss"
     if "#" in raw:
-        raw, tag = raw.split("#", 1)
-        tag = urllib.parse.unquote(tag) or "ss"
+        raw = raw.split("#", 1)[0]
     method = password = host = None
     port = 0
     if "@" in raw:
@@ -78,7 +68,6 @@ def _ss_to_outbound(link: str) -> dict[str, Any] | None:
         port = int(port_s)
     else:
         decoded = _b64decode(raw).decode()
-        # method:password@host:port
         if "@" not in decoded:
             return None
         userinfo, server = decoded.rsplit("@", 1)
@@ -210,111 +199,147 @@ def _trojan_to_outbound(link: str) -> dict[str, Any] | None:
     return outbound
 
 
-def _build_config(outbound: dict[str, Any], mixed_port: int) -> dict[str, Any]:
+def build_singbox_config(proxy_links: list[str], api_port: int) -> dict[str, Any]:
+    """Build sing-box config with all proxies + urltest + clash_api."""
+    outbounds = []
+    tags = []
+    
+    for i, link in enumerate(proxy_links):
+        outbound = share_to_outbound(link)
+        if not outbound:
+            continue
+        tag = f"proxy-{i}"
+        outbound["tag"] = tag
+        outbounds.append(outbound)
+        tags.append(tag)
+    
+    if not outbounds:
+        return None
+    
+    # Add urltest outbound
+    outbounds.append({
+        "type": "urltest",
+        "tag": "auto-test",
+        "outbounds": tags,
+        "url": TEST_URL,
+        "interval": "1m",
+        "tolerance": 50,
+    })
+    
+    # Add direct
+    outbounds.append({"type": "direct", "tag": "direct"})
+    
     return {
         "log": {"level": "error"},
-        "inbounds": [
-            {
-                "type": "mixed",
-                "tag": "mixed-in",
-                "listen": "127.0.0.1",
-                "listen_port": mixed_port,
+        "experimental": {
+            "clash_api": {
+                "external_controller": f"127.0.0.1:{api_port}",
+                "default_mode": "rule",
             }
-        ],
-        "outbounds": [outbound, {"type": "direct", "tag": "direct"}],
+        },
+        "outbounds": outbounds,
+        "route": {"final": "auto-test"},
     }
 
 
-def test_one(link: str) -> str | None:
-    """Return link if alive via sing-box, else None."""
-    outbound = share_to_outbound(link)
-    if not outbound:
-        return None
-    port = _free_port()
-    cfg = _build_config(outbound, port)
-    cfg_path = None
-    proc = None
-    try:
-        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
-            json.dump(cfg, f)
-            cfg_path = f.name
-        proc = subprocess.Popen(
-            [SINGBOX, "run", "-c", cfg_path],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        )
-        time.sleep(0.4)
-        if proc.poll() is not None:
-            return None
-        # curl through mixed inbound
-        r = subprocess.run(
-            [
-                "curl",
-                "-sS",
-                "-o",
-                "/dev/null",
-                "-w",
-                "%{http_code}",
-                "--connect-timeout",
-                str(TEST_TIMEOUT),
-                "--max-time",
-                str(TEST_TIMEOUT + 2),
-                "-x",
-                f"http://127.0.0.1:{port}",
-                TEST_URL,
-            ],
-            capture_output=True,
-            text=True,
-            timeout=TEST_TIMEOUT + 5,
-        )
-        code = (r.stdout or "").strip()
-        if code in ("204", "200"):
-            return link
-        return None
-    except Exception:
-        return None
-    finally:
-        if proc and proc.poll() is None:
-            proc.terminate()
-            try:
-                proc.wait(timeout=2)
-            except Exception:
-                proc.kill()
-        if cfg_path and os.path.exists(cfg_path):
-            try:
-                os.unlink(cfg_path)
-            except OSError:
-                pass
-
-
-def filter_alive(proxy_list: list[str], max_workers: int | None = None) -> list[str]:
-    """Test all share links concurrently with sing-box. Keep alive only."""
-    if not proxy_list:
+def test_proxies_via_clash_api(proxy_links: list[str], max_workers: int | None = None) -> list[str]:
+    """Test all proxies via sing-box Clash API."""
+    if not proxy_links:
         return []
+    
     workers = max_workers or MAX_WORKERS
-    # dedupe preserve order
-    seen: set[str] = set()
-    unique: list[str] = []
-    for p in proxy_list:
+    
+    # Dedupe
+    seen = set()
+    unique = []
+    for p in proxy_links:
         p = p.strip()
         if p and p not in seen:
             seen.add(p)
             unique.append(p)
-
-    logging.info("sing-box test: %d unique proxies, workers=%d", len(unique), workers)
-    alive: list[str] = []
-    with ThreadPoolExecutor(max_workers=workers) as ex:
-        futs = {ex.submit(test_one, p): p for p in unique}
-        done = 0
-        for fut in as_completed(futs):
-            done += 1
-            if done % 50 == 0 or done == len(unique):
-                logging.info("progress %d/%d alive=%d", done, len(unique), len(alive))
+    
+    logging.info("sing-box Clash API test: %d unique proxies", len(unique))
+    
+    # Build config
+    config = build_singbox_config(unique, CLASH_API_PORT)
+    if not config:
+        logging.warning("No valid proxies to test")
+        return []
+    
+    # Write config
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(config, f)
+        config_path = f.name
+    
+    proc = None
+    alive = []
+    
+    try:
+        # Start sing-box
+        proc = subprocess.Popen(
+            [SINGBOX, "run", "-c", config_path],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        
+        # Wait for Clash API to be ready
+        time.sleep(2)
+        
+        # Check if process is still alive
+        if proc.poll() is not None:
+            logging.error("sing-box process died early")
+            return unique  # fallback
+        
+        # Query delay for each proxy via Clash API
+        def check_one(tag: str, link: str) -> str | None:
             try:
-                res = fut.result()
-                if res:
-                    alive.append(res)
+                import urllib.request
+                url = f"http://127.0.0.1:{CLASH_API_PORT}/proxies/{tag}/delay?url={urllib.parse.quote(TEST_URL)}&timeout={TEST_TIMEOUT}"
+                req = urllib.request.Request(url, method="GET")
+                with urllib.request.urlopen(req, timeout=TEST_TIMEOUT / 1000 + 2) as resp:
+                    data = json.loads(resp.read().decode())
+                    if "delay" in data and isinstance(data["delay"], int) and data["delay"] >= 0:
+                        return link
             except Exception:
                 pass
-    logging.info("sing-box result: %d/%d alive", len(alive), len(unique))
-    return alive
+            return None
+        
+        # Concurrent check
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            futs = {ex.submit(check_one, f"proxy-{i}", link): link for i, link in enumerate(unique)}
+            done = 0
+            for fut in as_completed(futs):
+                done += 1
+                if done % 50 == 0 or done == len(unique):
+                    logging.info("progress %d/%d alive=%d", done, len(unique), len(alive))
+                try:
+                    res = fut.result()
+                    if res:
+                        alive.append(res)
+                except Exception:
+                    pass
+        
+        logging.info("sing-box Clash API result: %d/%d alive", len(alive), len(unique))
+        return alive if alive else unique
+        
+    except Exception as e:
+        logging.error("sing-box Clash API error: %s", e)
+        return unique  # fallback
+    finally:
+        if proc and proc.poll() is None:
+            proc.terminate()
+            try:
+                proc.wait(timeout=3)
+            except Exception:
+                proc.kill()
+        if config_path and os.path.exists(config_path):
+            try:
+                os.unlink(config_path)
+            except OSError:
+                pass
+
+
+# Backward compatibility
+def filter_alive(proxy_list: list[str], max_workers: int | None = None) -> list[str]:
+    """Test all share links via sing-box Clash API. Keep alive only."""
+    return test_proxies_via_clash_api(proxy_list, max_workers)
