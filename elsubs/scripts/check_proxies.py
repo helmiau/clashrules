@@ -23,8 +23,8 @@ except ImportError:
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-PROXY_MAIN_DIR = os.path.join(os.path.dirname(__file__), '..', 'mheidari98-proxy', '.proxy-main')
-NODES_FILE = os.path.join(PROXY_MAIN_DIR, 'nodes.md')
+PROXY_MAIN_DIR = os.path.dirname(__file__)  # elsubs/scripts -> elsubs
+NODES_FILE = os.path.join(PROXY_MAIN_DIR, 'mheidari98-proxy', '.proxy-main', 'nodes.md')
 OUTPUT_FILES = {
     'all': os.path.join(PROXY_MAIN_DIR, 'all'),
     'ss': os.path.join(PROXY_MAIN_DIR, 'ss'),
@@ -95,6 +95,11 @@ def update_nodes_md():
     
     return proxy
 
+def filter_proxies_simple(proxy_list):
+    """Simple filter - just return all proxies if v2rayChecker unavailable."""
+    logging.info(f"Using all {len(proxy_list)} proxies (v2rayChecker not available)")
+    return proxy_list
+
 def filter_proxies_v2raychecker(proxy_list, max_threads=50):
     """Filter proxies using v2rayChecker. Returns only live proxies."""
     if not proxy_list:
@@ -108,35 +113,28 @@ def filter_proxies_v2raychecker(proxy_list, max_threads=50):
         for p in proxy_list:
             f.write(p + '\n')
     
-    try:
-        # Run v2rayChecker
-        cmd = [
-            'v2rayChecker',
-            '-i', temp_input,
-            '-o', temp_output,
-            '-t', str(max_threads),
-            '-v'
-        ]
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
-        
-        # Read checked proxies
-        live_proxies = []
-        if os.path.exists(temp_output):
-            with open(temp_output, 'r') as f:
-                live_proxies = [line.strip() for line in f if line.strip()]
-        
-        logging.info(f"v2rayChecker: {len(live_proxies)}/{len(proxy_list)} proxies alive")
-        return live_proxies
-        
-    except subprocess.TimeoutExpired:
-        logging.error("v2rayChecker timed out")
-        return proxy_list  # Fallback to all
-    except FileNotFoundError:
-        logging.warning("v2rayChecker not found, skipping individual proxy check")
-        return proxy_list  # Fallback to all
-    except Exception as e:
-        logging.error(f"v2rayChecker error: {e}")
-        return proxy_list
+    # Try v2rayChecker first
+    for checker_path in ['v2rayChecker', '/usr/local/bin/v2rayChecker', '/usr/bin/v2rayChecker']:
+        try:
+            cmd = [checker_path, '-i', temp_input, '-o', temp_output, '-t', str(max_threads)]
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+            
+            live_proxies = []
+            if os.path.exists(temp_output):
+                with open(temp_output, 'r') as f:
+                    live_proxies = [line.strip() for line in f if line.strip()]
+            
+            logging.info(f"v2rayChecker ({checker_path}): {len(live_proxies)}/{len(proxy_list)} alive")
+            return live_proxies if live_proxies else proxy_list
+        except FileNotFoundError:
+            continue
+        except Exception as e:
+            logging.warning(f"v2rayChecker ({checker_path}) error: {e}")
+            continue
+    
+    # Fallback: return all proxies
+    logging.warning("v2rayChecker not found, using all scraped proxies")
+    return proxy_list
 
 def add_flag_to_proxy(proxy_line, flag):
     """Add source flag to proxy line for identification."""

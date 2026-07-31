@@ -1,4 +1,4 @@
-name: Proxy Checker & Filter
+name: Proxy Generator
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:  # Manual trigger
 
 jobs:
-  check-and-filter:
+  generate-proxies:
     runs-on: ubuntu-latest
     
     steps:
@@ -26,12 +26,25 @@ jobs:
           pip install requests PySocks aiohttp asyncio
           pip install git+https://github.com/mheidari98/proxyUtil@main
 
-      - name: Run proxy checker
+      - name: Install v2rayChecker
+        run: |
+          wget -q https://github.com/mheidari98/v2rayChecker/releases/latest/download/v2rayChecker_linux_amd64 -O /usr/local/bin/v2rayChecker
+          chmod +x /usr/local/bin/v2rayChecker || true
+
+      - name: Run proxy generator
         run: |
           cd elsubs/scripts
           python check_proxies.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify outputs
+        run: |
+          echo "=== Output files ==="
+          ls -la elsubs/all elsubs/ss elsubs/vmess elsubs/vless elsubs/trojan 2>/dev/null || echo "Checking..."
+          echo "=== all (first 500 chars) ==="
+          head -c 500 elsubs/all 2>/dev/null || echo "all not found"
+          echo ""
 
       - name: Commit and push if changes
         run: |
@@ -39,5 +52,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add -A
-          git diff --staged --quiet || git commit -m "Auto-update: filter dead proxies $(date -u +'%Y-%m-%d %H:%M:%S')"
+          git diff --staged --quiet || git commit -m "Auto-update: generated proxies $(date -u +'%Y-%m-%d %H:%M:%S')"
           git push
