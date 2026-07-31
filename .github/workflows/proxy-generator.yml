@@ -26,11 +26,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests PySocks aiohttp
           pip install git+https://github.com/mheidari98/proxyUtil@main
-
-      - name: Install v2rayChecker
-        run: |
-          wget -q https://github.com/mheidari98/v2rayChecker/releases/latest/download/v2rayChecker_linux_amd64 -O /usr/local/bin/v2rayChecker
-          chmod +x /usr/local/bin/v2rayChecker || true
+          # v2rayChecker is included in proxyUtil package
+          which v2rayChecker || echo "v2rayChecker not found, will use fallback"
 
       - name: Run proxy generator
         run: python elsubs/scripts/check_proxies.py
