@@ -49,6 +49,7 @@ Each server includes a **flag ID** (e.g., `#[abc12345]`) for easy provider sourc
 | **Husi** | Android | [GitHub Releases](https://github.com/xchacha20-poly1305/husi/releases) |
 | **Singbox** | Android/iOS/macOS/Windows/Linux | [GitHub Releases](https://github.com/SagerNet/sing-box/releases) |
 | **Dark Tunnel** | Android | [Play Store](https://play.google.com/store/apps/details?id=net.darktunnel.app) |
+| **LxBox** | Android | [GitHub Releases](https://github.com/Leadaxe/LxBox/releases) |
 
 ### Recommended (Android)
 
