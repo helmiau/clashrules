@@ -1,0 +1,43 @@
+name: Proxy Checker & Filter
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Every day at 00:00 UTC
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  check-and-filter:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: 'elsubs'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests PySocks aiohttp asyncio
+          pip install git+https://github.com/mheidari98/proxyUtil@main
+
+      - name: Run proxy checker
+        run: |
+          cd elsubs/scripts
+          python check_proxies.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push if changes
+        run: |
+          cd elsubs
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Auto-update: filter dead proxies $(date -u +'%Y-%m-%d %H:%M:%S')"
+          git push
