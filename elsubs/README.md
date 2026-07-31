@@ -31,7 +31,7 @@ Each server includes a **flag ID** (e.g., `#[abc12345]`) for easy provider sourc
 
 | App | Platform | Download |
 |-----|----------|----------|
-| **V2rayNG** | Android | [GitHub Releases](https://github.com/2dust/v2rayNG/releases) |
+| **V2rayNG** ⭐ | Android | [GitHub Releases](https://github.com/2dust/v2rayNG/releases) |
 | **V2flyNG** | Android | [GitHub Releases](https://github.com/2dust/v2flyNG/releases) |
 | **GatchaNG** (Recommended for Shadowsocks) | Android | [GitHub Releases](https://github.com/djoeni/pitureienge/releases) |
 | **XrayPB** | Android | [Play Store](https://play.google.com/store/apps/details?id=com.sihiver.xraypb) |
@@ -39,27 +39,19 @@ Each server includes a **flag ID** (e.g., `#[abc12345]`) for easy provider sourc
 | **Http Injector** | Android | [Play Store](https://play.google.com/store/apps/details?id=com.evozi.injector) |
 | **Npv Tunnel 104** | Android | [APKPure](https://m.apkpure.com/npv-tunnel-v2ray-ssh/com.napsternetlabs.napsternetv/download/104.0) |
 | **Kentang Clash** | Android | [v7a](https://github.com/bitzblack/Kentang-Clash/raw/refs/heads/main/KENTANG-CLASH-2.5.0-armeabi-v7a-release%20(3).apk) / [v8a](https://github.com/bitzblack/Kentang-Clash/raw/refs/heads/main/KENTANG-CLASH-2.5.0-arm64-v8a-release.apk) |
-| **Hiddify** | Android/Windows/macOS/Linux | [GitHub Releases](https://github.com/hiddify/hiddify-next/releases) |
-| **FiClash** | Android/Windows/macOS/Linux | [GitHub Releases](https://github.com/chen08209/FlClash/releases) |
-| **Clash Meta for Android (CMFA)** | Android | [GitHub Releases](https://github.com/MetaCubeX/ClashMetaForAndroid/releases) |
-| **Karing** | Android/iOS/macOS/Windows | [GitHub Releases](https://github.com/KaringX/karing/releases) |
+| **Hiddify** ⭐ | Android/Windows/macOS/Linux | [GitHub Releases](https://github.com/hiddify/hiddify-next/releases) |
+| **FiClash** ⭐ | Android/Windows/macOS/Linux | [GitHub Releases](https://github.com/chen08209/FlClash/releases) |
+| **Clash Meta for Android (CMFA)** ⭐ | Android | [GitHub Releases](https://github.com/MetaCubeX/ClashMetaForAndroid/releases) |
+| **Karing** ⭐ | Android/iOS/macOS/Windows | [GitHub Releases](https://github.com/KaringX/karing/releases) |
 | **Surfboard** | iOS | [GitHub Releases](https://github.com/getsurfboard/surfboard/releases) |
-| **Nekobox** | Android/iOS/macOS/Windows | [GitHub Releases](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases) |
+| **Nekobox** ⭐ | Android/iOS/macOS/Windows | [GitHub Releases](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases) |
 | **Exclave** | Android | [GitHub Releases](https://github.com/dyhkwong/Exclave/releases) |
 | **Husi** | Android | [GitHub Releases](https://github.com/xchacha20-poly1305/husi/releases) |
-| **Singbox** | Android/iOS/macOS/Windows/Linux | [GitHub Releases](https://github.com/SagerNet/sing-box/releases) |
+| **Singbox** ⭐ | Android/iOS/macOS/Windows/Linux | [GitHub Releases](https://github.com/SagerNet/sing-box/releases) |
 | **Dark Tunnel** | Android | [Play Store](https://play.google.com/store/apps/details?id=net.darktunnel.app) |
 | **LxBox** | Android | [GitHub Releases](https://github.com/Leadaxe/LxBox/releases) |
 
-### Recommended (Android)
-
-- [ClashMetaForAndroid](https://github.com/MetaCubeX/ClashMetaForAndroid/releases)
-- [FlClash](https://github.com/chen08209/FlClash/releases) `(clash-verge/1.6.6)`
-- [NekoBox](https://github.com/MatsuriDayo/NekoBoxForAndroid)
-- [sing-box](https://github.com/SagerNet/sing-box/releases)
-- [Hiddify-Next](https://github.com/hiddify/hiddify-next/releases)
-- [v2rayNG](https://github.com/2dust/v2rayNG/releases)
-- [Karing](https://github.com/KaringX/karing/releases/)
+> 💡 **Hint**: ⭐ = Recommended (Android): [ClashMetaForAndroid](https://github.com/MetaCubeX/ClashMetaForAndroid/releases) · [FlClash](https://github.com/chen08209/FlClash/releases) `(clash-verge/1.6.6)` · [NekoBox](https://github.com/MatsuriDayo/NekoBoxForAndroid) · [sing-box](https://github.com/SagerNet/sing-box/releases) · [Hiddify-Next](https://github.com/hiddify/hiddify-next/releases) · [v2rayNG](https://github.com/2dust/v2rayNG/releases) · [Karing](https://github.com/KaringX/karing/releases/)
 
 ## 🚀 How to Use
 
