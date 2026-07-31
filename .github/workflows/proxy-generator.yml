@@ -21,26 +21,33 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install sing-box
+        run: |
+          curl -fsSL https://sing-box.app/gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/sagernet.gpg
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/sagernet.gpg] https://deb.sagernet.org/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/sagernet.list
+          sudo apt-get update
+          sudo apt-get install -y sing-box
+          sing-box version
+
+      - name: Install proxyUtil
         run: |
           python -m pip install --upgrade pip
           pip install requests PySocks aiohttp
           pip install git+https://github.com/mheidari98/proxyUtil@main
-          # v2rayChecker is included in proxyUtil package
-          which v2rayChecker || echo "v2rayChecker not found, will use fallback"
 
       - name: Run proxy generator
         run: python elsubs/scripts/check_proxies.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROXY_TEST_WORKERS: '20'
+          PROXY_TEST_TIMEOUT: '8'
 
       - name: Verify outputs
         run: |
           echo "=== Output files ==="
-          ls -la elsubs/all elsubs/ss elsubs/vmess elsubs/vless elsubs/trojan 2>/dev/null || echo "Checking..."
-          echo "=== all (first 500 chars) ==="
-          head -c 500 elsubs/all 2>/dev/null || echo "all not found"
-          echo ""
+          ls -la elsubs/all elsubs/ss elsubs/vmess elsubs/vless elsubs/trojan
+          echo "=== Counts ==="
+          wc -l elsubs/all elsubs/ss elsubs/vmess elsubs/vless elsubs/trojan
 
       - name: Commit and push if changes
         run: |

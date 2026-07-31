@@ -14,6 +14,14 @@ import re
 import base64
 from urllib.parse import urlparse
 
+# Import sing-box tester
+sys.path.insert(0, os.path.dirname(__file__))
+try:
+    from singbox_tester import filter_alive as singbox_filter_alive
+except ImportError:
+    singbox_filter_alive = None
+    logging.warning("singbox_tester not available, will use fallback")
+
 # Install proxyUtil if not available
 try:
     from proxyUtil import *
@@ -98,46 +106,23 @@ def update_nodes_md():
     
     return proxy
 
-def filter_proxies_simple(proxy_list):
-    """Simple filter - just return all proxies if v2rayChecker unavailable."""
-    logging.info(f"Using all {len(proxy_list)} proxies (v2rayChecker not available)")
-    return proxy_list
-
-def filter_proxies_v2raychecker(proxy_list, max_threads=50):
-    """Filter proxies using v2rayChecker. Returns only live proxies."""
+def filter_proxies_singbox(proxy_list, max_threads=20):
+    """Filter proxies using sing-box tester. Returns only live proxies."""
     if not proxy_list:
         return []
     
-    # Write proxies to temp file for v2rayChecker
-    temp_input = '/tmp/proxies_to_check.txt'
-    temp_output = '/tmp/checked_proxies.txt'
+    if singbox_filter_alive is None:
+        logging.warning("singbox_tester not available, using all proxies")
+        return proxy_list
     
-    with open(temp_input, 'w') as f:
-        for p in proxy_list:
-            f.write(p + '\n')
-    
-    # Try v2rayChecker first
-    for checker_path in ['v2rayChecker', '/usr/local/bin/v2rayChecker', '/usr/bin/v2rayChecker']:
-        try:
-            cmd = [checker_path, '-i', temp_input, '-o', temp_output, '-t', str(max_threads)]
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
-            
-            live_proxies = []
-            if os.path.exists(temp_output):
-                with open(temp_output, 'r') as f:
-                    live_proxies = [line.strip() for line in f if line.strip()]
-            
-            logging.info(f"v2rayChecker ({checker_path}): {len(live_proxies)}/{len(proxy_list)} alive")
-            return live_proxies if live_proxies else proxy_list
-        except FileNotFoundError:
-            continue
-        except Exception as e:
-            logging.warning(f"v2rayChecker ({checker_path}) error: {e}")
-            continue
-    
-    # Fallback: return all proxies
-    logging.warning("v2rayChecker not found, using all scraped proxies")
-    return proxy_list
+    try:
+        logging.info(f"Testing {len(proxy_list)} proxies with sing-box...")
+        live_proxies = singbox_filter_alive(proxy_list, max_workers=max_threads)
+        logging.info(f"sing-box: {len(live_proxies)}/{len(proxy_list)} proxies alive")
+        return live_proxies if live_proxies else proxy_list
+    except Exception as e:
+        logging.error(f"sing-box test error: {e}")
+        return proxy_list  # Fallback to all
 
 def add_flag_to_proxy(proxy_line, flag):
     """Add source flag to proxy line for identification."""
@@ -195,9 +180,9 @@ def main():
         logging.warning("No proxies scraped, skipping filter step")
         return
     
-    # Step 2: Filter individual proxies (optional, may be slow)
-    logging.info("Filtering proxies with v2rayChecker...")
-    live_proxies = filter_proxies_v2raychecker(all_proxies)
+    # Step 2: Filter individual proxies with sing-box
+    logging.info("Filtering proxies with sing-box...")
+    live_proxies = filter_proxies_singbox(all_proxies)
     
     # Step 3: Categorize and save
     categorize_and_save(live_proxies)
